@@ -1,0 +1,104 @@
+---
+title: Como fazer um calculo nutricional
+description: TMB, GET e VET calculados automaticamente a partir dos dados antropometricos.
+---
+
+O Calculo Nutricional e o modulo que transforma medidas corporais em metas energeticas. O DietFlow importa automaticamente os dados da Antropometria, calcula TMB, GET e VET, e disponibiliza os resultados para o plano alimentar.
+
+## Passo a passo
+
+<Steps>
+
+<Step>
+### Registre a Antropometria
+
+Acesse o perfil do paciente e va para a aba **Antropometria**. Crie um novo registro com as medidas disponiveis:
+
+- **Peso** e **altura** (obrigatorios para o calculo)
+- **Circunferencias** (cintura, quadril, braco, etc.)
+- **Dobras cutaneas** (se usar protocolo de composicao corporal)
+
+Salve o registro. Esses dados serao importados automaticamente no proximo passo.
+</Step>
+
+<Step>
+### Acesse a aba Calculo
+
+Ainda no perfil do paciente, va para a aba **Calculo** e clique em **"Novo Calculo"**.
+</Step>
+
+<Step>
+### Dados importados automaticamente
+
+O sistema importa os dados antropometricos mais recentes do paciente — peso, altura, idade e sexo biologico. Voce nao precisa digitar novamente.
+</Step>
+
+<Step>
+### Escolha a formula de TMB
+
+Selecione a equacao para calcular a **Taxa Metabolica Basal (TMB)**:
+
+- **Harris-Benedict** — classica, amplamente utilizada
+- **Mifflin-St Jeor** — considerada mais precisa para populacao atual
+- **FAO/OMS** — recomendada pela Organizacao Mundial da Saude
+- Outras opcoes disponiveis conforme o protocolo do paciente
+
+O sistema calcula a TMB automaticamente com base na formula escolhida.
+</Step>
+
+<Step>
+### Defina o Fator de Atividade
+
+Selecione o nivel de atividade fisica do paciente para obter o **GET (Gasto Energetico Total)**:
+
+- Sedentario
+- Levemente ativo
+- Moderadamente ativo
+- Muito ativo
+- Extremamente ativo
+
+O GET e calculado multiplicando a TMB pelo fator de atividade.
+</Step>
+
+<Step>
+### Ajuste o VET
+
+O **VET (Valor Energetico Total)** e a meta calorica final, ajustada de acordo com o objetivo do paciente:
+
+- **Emagrecimento** — deficit calorico (VET menor que o GET)
+- **Manutencao** — VET igual ao GET
+- **Ganho de massa** — superavit calorico (VET maior que o GET)
+
+Defina o ajuste percentual ou o valor absoluto desejado.
+</Step>
+
+<Step>
+### Defina cenarios (opcional)
+
+Se o paciente treina, voce pode criar **cenarios diferenciados**:
+
+- **Dia de treino** — com fator de atividade maior
+- **Dia de descanso** — com fator de atividade menor
+
+Cada cenario gera metas energeticas independentes para o plano alimentar.
+</Step>
+
+<Step>
+### Salve o calculo
+
+Clique em **Salvar**. Os resultados (TMB, GET, VET e cenarios) ficam disponiveis para criar o plano alimentar na aba **Dieta**.
+</Step>
+
+</Steps>
+
+<Callout type="info" title="Inteligencia Cascata">
+O DietFlow usa **Inteligencia Cascata**: a Antropometria alimenta o Calculo, que alimenta a Dieta. Se o peso do paciente mudar em uma nova avaliacao, o sistema recalcula automaticamente o VET mantendo o objetivo nutricional definido.
+</Callout>
+
+## Glossario rapido
+
+| Sigla | Significado | O que e |
+|-------|-------------|---------|
+| **TMB** | Taxa Metabolica Basal | Energia gasta em repouso absoluto |
+| **GET** | Gasto Energetico Total | TMB multiplicada pelo fator de atividade |
+| **VET** | Valor Energetico Total | Meta calorica final ajustada ao objetivo |

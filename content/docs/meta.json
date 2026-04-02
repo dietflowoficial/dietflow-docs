@@ -1,0 +1,15 @@
+{
+  "title": "Documentacao",
+  "root": true,
+  "pages": [
+    "index",
+    "---Comecando---",
+    "comecando",
+    "---Guias---",
+    "guias",
+    "---Referencia---",
+    "referencia",
+    "---Sobre---",
+    "sobre"
+  ]
+}

@@ -1,0 +1,52 @@
+---
+title: Modulos clinicos
+description: Todos os modulos do DietFlow e como se conectam.
+---
+
+O DietFlow organiza o trabalho clinico em modulos independentes que se comunicam automaticamente. Cada modulo cobre uma etapa do atendimento nutricional.
+
+## Anamnese
+
+Registro completo do historico clinico. Editor com blocos arrastaveis (drag-and-drop) para montar o formulario ideal para cada tipo de paciente. Voce cria seus proprios modelos e reutiliza entre pacientes.
+
+## Antropometria
+
+Medidas corporais — peso, altura, dobras cutaneas, circunferencias. Calcula composicao corporal automaticamente e gera graficos de evolucao ao longo do tempo.
+
+## Exames
+
+Prescricao e registro de resultados laboratoriais. Acompanhe a evolucao longitudinal dos marcadores com graficos comparativos entre avaliacoes.
+
+## Prescricao
+
+Suplementos, manipulados e texto livre. O sistema conta com um guardrail de seguranca: se a soma das moleculas de todas as formulacoes ultrapassar o Upper Limit (UL), voce recebe um alerta antes de salvar.
+
+## Calculo Nutricional
+
+Calculo de TMB (Taxa Metabolica Basal), GET (Gasto Energetico Total) e VET (Valor Energetico Total). Importa dados da Antropometria automaticamente. Suporta cenarios de treino vs descanso para ajustar as metas conforme a rotina do paciente.
+
+## Dieta
+
+Plano alimentar completo com refeicoes e alimentos. Importa as metas calculadas no modulo de Calculo para distribuir macronutrientes entre as refeicoes do dia.
+
+## Tarefas
+
+Pendencias e lembretes vinculados a um paciente ou globais. Arraste tarefas para uma data no calendario para organizar seu fluxo de trabalho.
+
+## Textos
+
+Editor de texto rico para laudos, orientacoes e documentos personalizados. Quatro subtipos disponiveis para cobrir diferentes necessidades de comunicacao com o paciente.
+
+---
+
+## Pipeline clinico
+
+Os modulos se alimentam automaticamente — voce registra as medidas, o sistema calcula e distribui.
+
+**Antropometria** → **Calculo** → **Dieta**
+
+1. Registre as medidas corporais na **Antropometria**
+2. O **Calculo Nutricional** importa esses dados e calcula TMB, GET e VET
+3. O **Plano Alimentar (Dieta)** importa as metas do Calculo para distribuir macros entre refeicoes
+
+Se o peso do paciente mudar, o sistema recalcula o VET mantendo o objetivo nutricional. Se o paciente treina, o sistema cria cenarios automaticos para dias de treino e descanso.
