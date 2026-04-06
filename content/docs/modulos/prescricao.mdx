@@ -1,0 +1,183 @@
+---
+title: Prescricao
+description: Suplementos, manipulados e orientacoes textuais em um editor com cards reorganizaveis.
+---
+
+O modulo de Prescricao centraliza a criacao e gestao de prescricoes nutricionais. Voce monta a prescricao usando cards independentes — cada um representando uma formula magistral, um suplemento comercial ou um texto de orientacao. Os cards podem ser reordenados por arrastar-e-soltar, duplicados e exportados como PDF ou HTML.
+
+## Visao geral
+
+O editor de prescricao funciona com tres tipos de card:
+
+| Tipo | O que e | Campos principais |
+|------|---------|-------------------|
+| **Formulacao** | Formula magistral (manipulado) | Substancias, quantidades, forma farmaceutica, posologia |
+| **Suplemento** | Produto comercial | Nome, marca, composicao, posologia |
+| **Texto** | Orientacao livre | Editor rich text |
+
+Voce pode misturar os tres tipos na mesma prescricao e organizar na ordem que preferir.
+
+## Formulacao (manipulado)
+
+O card de formulacao e voltado para formulas magistrais enviadas a farmacias de manipulacao.
+
+### Tabela de substancias
+
+Cada formulacao contem uma tabela de substancias (moleculas). Para cada linha, informe:
+
+- **Substancia** — nome da molecula ou ativo (ex.: Vitamina D3, Zinco Quelato)
+- **Quantidade** — dosagem numerica (ex.: 2000, 30)
+- **Unidade** — unidade de medida (mg, mcg, g, UI, entre outras)
+
+Voce pode adicionar quantas linhas quiser. Para remover, use o botao de excluir na linha.
+
+### Adicionar em massa
+
+O botao **Adicionar em Massa** abre um painel onde voce seleciona varias substancias de uma vez. As substancias selecionadas sao inseridas na tabela com campos de quantidade e unidade prontos para preencher.
+
+### Forma farmaceutica
+
+Defina a apresentacao da formula:
+
+- **Forma** — capsula, comprimido, po, liquido, sache, sublingual, spray, gel ou creme
+- **Especificacoes** — detalhes adicionais que variam conforme a forma (ex.: tamanho da capsula)
+- **Dose** — quantidade por unidade (o rotulo do campo se adapta a forma: "dose por capsula", "dose por comprimido", etc.)
+
+### Posologia
+
+Campo de texto livre para instrucoes de uso. Exemplos:
+
+- "Tomar 1 capsula ao dia, apos o almoco"
+- "Dissolver 1 sache em 200ml de agua, 2x ao dia"
+
+### Via de administracao
+
+Selecione a via de administracao da formula:
+
+| Via | Descricao |
+|-----|-----------|
+| Oral | Ingestao pela boca |
+| Sublingual | Sob a lingua |
+| Topico | Aplicacao na pele |
+| Injetavel | Injecao |
+| Nasal | Spray ou gotas nasais |
+| Retal | Supositorio |
+| Ocular | Colirio |
+
+## Suplemento (comercial)
+
+O card de suplemento e voltado para produtos prontos vendidos em farmacias ou lojas de suplementos.
+
+### Campos
+
+- **Nome** — nome do produto (ex.: "Omega 3 EPA/DHA")
+- **Marca** — fabricante ou marca comercial
+- **Composicao** — tabela de substancias (mesmo formato da formulacao)
+- **Posologia** — instrucoes de uso em texto livre
+
+A tabela de composicao e opcional. Voce pode preencher apenas nome, marca e posologia se preferir algo mais rapido.
+
+## Texto (orientacao)
+
+O card de texto e o mais simples — apenas um titulo e um editor de texto enriquecido. Use para:
+
+- Instrucoes gerais de uso da prescricao
+- Orientacoes sobre interacoes medicamentosas
+- Observacoes clinicas que devem acompanhar a prescricao
+- Qualquer informacao adicional relevante
+
+## Guardrail de seguranca (Upper Limit)
+
+<Callout type="warn" title="Funcionalidade em beta">
+O guardrail de Upper Limit esta disponivel para usuarios do grupo beta com a funcionalidade estruturada ativada. No modo padrao (manual), a verificacao de seguranca nao e aplicada.
+</Callout>
+
+Quando a funcionalidade estruturada esta ativa, o DietFlow soma automaticamente as doses de cada substancia em todas as formulacoes e suplementos da prescricao. Se a dose total ultrapassar o **Upper Limit (UL)** — limite maximo diario toleravel — o sistema emite um alerta antes de salvar.
+
+### Como funciona
+
+1. O sistema identifica cada substancia presente na prescricao
+2. Soma as quantidades de todas as ocorrencias (em diferentes cards)
+3. Compara com o UL registrado no catalogo de substancias
+4. Classifica o risco:
+
+| Status | Significado |
+|--------|-------------|
+| **Seguro** | Dose total dentro da faixa segura |
+| **Atencao** | Dose total se aproximando do UL |
+| **Perigo** | Dose total acima do UL |
+
+### Alertas ao salvar
+
+Se houver substancias em faixa de atencao ou perigo, o sistema exibe um aviso apos salvar informando quantas substancias estao em risco e quantas possuem pendencias de cobertura (sem UL cadastrado, sem dose informada ou unidade incompativel).
+
+<Callout type="info" title="Fontes dos limites">
+Os valores de Upper Limit vem de fontes cientificas reconhecidas (IOM, EFSA, FDA). Cada substancia no catalogo pode ter UL de diferentes fontes, e o sistema exibe a origem da informacao.
+</Callout>
+
+## Catalogo de substancias
+
+O DietFlow vem com um catalogo de substancias organizado por categorias:
+
+- Vitaminas
+- Minerais
+- Aminoacidos
+- Fitoterapicos
+- Acidos graxos
+- Probioticos
+- Antioxidantes
+- Adaptogenos
+- Enzimas
+
+Cada substancia no catalogo inclui moleculas disponiveis, unidades de medida aceitas e (quando disponivel) informacoes de seguranca como Upper Limit e dose usual.
+
+### Cadastrar substancias personalizadas
+
+Voce pode criar suas proprias substancias em **Meus Conteudos → Cadastrados**. Defina:
+
+- Nome e categoria
+- Moleculas e formas disponiveis
+- Unidades de medida aceitas
+- Informacoes de seguranca (UL, dose usual, status ANVISA)
+
+<Callout type="info" title="Substancias pendentes">
+Ao digitar uma substancia que nao esta no catalogo durante a edicao, ela e criada como pendente. Voce pode completa-la depois em Meus Conteudos → Cadastrados.
+</Callout>
+
+## Arrastar e soltar
+
+Todos os cards da prescricao podem ser reordenados por arrastar-e-soltar. Use a alca de movimentacao (grip) no canto do card para mudar a posicao. A ordem e preservada ao salvar e respeitada na exportacao.
+
+## Favoritos e templates
+
+Prescricoes podem ser salvas como favoritos para reutilizacao. O fluxo completo:
+
+1. Monte uma prescricao no editor
+2. Clique em **Favoritar** para salvar como template
+3. Na proxima vez, crie um novo registro e clique em **Importar Favorito**
+4. Escolha entre substituir o conteudo ou mesclar com os itens existentes
+
+Templates ficam disponiveis em **Meus Conteudos → Favoritos → Prescricao**.
+
+## Exportacao
+
+Prescricoes podem ser exportadas nos seguintes formatos:
+
+- **PDF** — para imprimir e entregar ao paciente ou a farmacia
+- **HTML** — para enviar digitalmente ou visualizar no navegador
+
+A exportacao inclui todos os cards na ordem configurada, com detalhes de substancias, posologia e orientacoes.
+
+## Dicas de uso
+
+<Callout type="info" title="Fluxo recomendado">
+1. Crie um novo registro de prescricao
+2. Adicione as formulacoes e suplementos necessarios
+3. Preencha posologia e orientacoes
+4. Reorganize na ordem desejada
+5. Salve e exporte como PDF para entregar ao paciente
+</Callout>
+
+<Callout type="info" title="Uma prescricao, varios itens">
+Voce nao precisa criar uma prescricao separada para cada suplemento. Agrupe tudo na mesma prescricao — formulas, suplementos e orientacoes — e exporte um documento unico.
+</Callout>

@@ -3,11 +3,13 @@ title: Tour rapido
 description: Visao geral das principais areas do DietFlow
 ---
 
-O DietFlow e organizado em areas que refletem o dia a dia do nutricionista. Aqui vai um panorama rapido de cada uma.
+O DietFlow e organizado em areas que refletem o dia a dia do nutricionista. Aqui vai um panorama rapido de cada uma — com links para os guias e referencias detalhados.
 
 ## Dashboard
 
 Sua **lista de pacientes** com busca, filtros e visualizacao em grid ou lista. E o ponto de partida para acessar qualquer paciente. Voce pode filtrar por status, ordenar por nome ou data, e realizar acoes em lote.
+
+Veja como [cadastrar seu primeiro paciente](/docs/guias/cadastrar-paciente).
 
 ## Agenda
 
@@ -16,6 +18,8 @@ A central de agendamento com **5 modos de visualizacao**: mes, semana, dia, list
 <Callout type="info" title="5 tipos de evento">
 A agenda trabalha com atendimentos (consultas), tarefas, compromissos pessoais, bloqueios de horario e eventos especiais. Cada tipo tem seu comportamento proprio.
 </Callout>
+
+Saiba mais no [guia de consultas](/docs/guias/criar-consulta) e na [referencia da agenda](/docs/modulos/agenda).
 
 ## Perfil do Paciente
 
@@ -31,9 +35,49 @@ Ao abrir um paciente, voce encontra **7 abas** que cobrem todo o acompanhamento 
   <Card title="Dieta" description="Plano alimentar com refeicoes, alimentos e distribuicao de macros" />
 </Cards>
 
+Os modulos se conectam em cadeia: **Antropometria** alimenta o **Calculo**, que define as metas da **Dieta**. Esse fluxo e o [pipeline clinico](/docs/referencia/pipeline-clinico) — o coracao do DietFlow.
+
+### Anamnese
+
+Monte registros com blocos arrastaveis: texto livre, dados estruturados, listas de escolha e campos semaforicos. Salve como template para reutilizar com outros pacientes.
+
+Guia: [Anamnese passo a passo](/docs/guias/anamnese) | Referencia: [Modulo Anamnese](/docs/modulos/anamnese)
+
+### Antropometria e Gestacao
+
+Registre peso, altura, dobras cutaneas e circunferencias. O sistema calcula automaticamente percentual de gordura, massa magra e indices como IMC. Para gestantes, o [modulo Gestacao](/docs/modulos/gestacao) acompanha ganho de peso com curvas de referencia (Atalah, IOM).
+
+Guia: [Antropometria passo a passo](/docs/guias/antropometria) | Referencia: [Modulo Antropometria](/docs/modulos/antropometria)
+
+### Exames
+
+Solicite exames com marcadores padronizados e registre resultados. O DietFlow monta a evolucao longitudinal automaticamente, com graficos de tendencia e valores de referencia.
+
+Guia: [Exames passo a passo](/docs/guias/exames) | Referencia: [Modulo Exames](/docs/modulos/exames)
+
+### Prescricao
+
+Crie prescricoes de tres tipos: **formulacoes magistrais** (manipulados), **suplementos** prontos e **texto livre**. O sistema alerta quando a soma de moleculas ultrapassa o Upper Limit (UL) de seguranca.
+
+Guia: [Prescricao passo a passo](/docs/guias/prescricao) | Referencia: [Modulo Prescricao](/docs/modulos/prescricao)
+
+### Calculo nutricional
+
+Importe peso e altura da antropometria, escolha a equacao de TMB, adicione fator de atividade e fator termico para chegar ao VET. O sistema cria cenarios automaticos para dias de treino e descanso.
+
+Guia: [Calculo nutricional](/docs/guias/calculo-nutricional) | Referencia: [Modulo Calculo](/docs/modulos/calculo)
+
+### Plano alimentar (Dieta)
+
+Monte refeicoes com alimentos do banco TACO/TBCA/IBGE/USDA, distribua macronutrientes e acompanhe o atingimento das metas importadas do calculo. Duplique refeicoes, reordene com arrastar e soltar, e exporte em PDF.
+
+Guia: [Plano alimentar](/docs/guias/plano-alimentar) | Referencia: [Modulo Dieta](/docs/modulos/dieta)
+
 ## Tarefas
 
-Gerenciador de pendencias inspirado no OmniFocus. Tem um **mini-calendario** lateral e voce pode **arrastar tarefas para uma data** para agenda-las. Tarefas podem ser vinculadas a um paciente ou ser independentes.
+Gerenciador de pendencias inspirado no OmniFocus. Tem um **mini-calendario** lateral e voce pode **arrastar tarefas para uma data** para agenda-las. Pastas inteligentes organizam por hoje, atrasadas, agendadas e todas. Tarefas podem ser vinculadas a um paciente ou ser independentes.
+
+Guia: [Tarefas passo a passo](/docs/guias/tarefas) | Referencia: [Modulo Tarefas](/docs/modulos/tarefas)
 
 ## Meus Conteudos
 
@@ -41,13 +85,26 @@ Seu banco pessoal dividido em tres secoes:
 
 - **Favoritos**: templates reutilizaveis de anamnese, prescricao, exames, dieta, textos e receitas
 - **Cadastrados**: alimentos, exames e substancias que voce criou
-- **Formularios**: formularios personalizados para enviar aos pacientes
+- **Formularios**: formularios personalizados para enviar aos pacientes (5 tipos de campo, envio individual ou em grupo)
+
+Guia: [Meus Conteudos](/docs/guias/meus-conteudos) | Referencia: [Textos](/docs/modulos/textos) | [Formularios](/docs/modulos/forms)
 
 ## Configuracoes
 
 Gerencie sua conta e seu consultorio:
 
-- **Conta**: nome, email, avatar e seguranca
-- **Profissional**: CRN, logo e locais de atendimento
-- **Planos de atendimento**: valor, duracao e tipo por local
-- **Pagamentos**: assinatura DietFlow, faturas e upgrade de plano
+- **[Conta](/docs/configuracoes/conta)**: nome, email, avatar e seguranca
+- **[Profissional](/docs/configuracoes/profissional)**: CRN, logo e locais de atendimento
+- **[Planos de atendimento](/docs/configuracoes/planos-atendimento)**: valor, duracao e tipo por local
+- **[Agenda](/docs/configuracoes/agenda)**: horarios padroes, duracao de consulta e disponibilidade
+- **[Pagamentos](/docs/configuracoes/pagamentos)**: assinatura DietFlow, faturas e upgrade de plano
+
+## Proximo passo
+
+Agora que voce conhece as areas, escolha um guia para comecar:
+
+<Cards>
+  <Card title="Cadastrar paciente" href="/docs/guias/cadastrar-paciente" description="O primeiro passo para atender" />
+  <Card title="Criar consulta" href="/docs/guias/criar-consulta" description="Agende seu primeiro atendimento" />
+  <Card title="Pipeline clinico" href="/docs/referencia/pipeline-clinico" description="Entenda o fluxo completo de dados" />
+</Cards>

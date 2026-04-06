@@ -1,0 +1,115 @@
+---
+title: Pipeline Clinico
+description: "Como os modulos se conectam: Antropometria, Calculo e Dieta."
+---
+
+O Pipeline Clinico e a espinha dorsal do DietFlow. Ele conecta tres modulos em sequencia — Antropometria, Calculo Nutricional e Plano Alimentar — de forma que cada etapa alimenta a proxima automaticamente. Quando um dado muda no inicio da cadeia, os resultados se propagam sem que voce precise redigitar nada.
+
+## Visao geral
+
+```
+Antropometria → Calculo Nutricional → Plano Alimentar
+```
+
+Cada modulo tem um papel especifico:
+
+| Etapa | Modulo | O que faz | O que passa adiante |
+|-------|--------|-----------|---------------------|
+| 1 | [Antropometria](/docs/modulos/antropometria) | Registra medidas corporais (peso, altura, dobras, circunferencias) | Peso, altura, idade, sexo, massa magra, % gordura |
+| 2 | [Calculo Nutricional](/docs/modulos/calculo) | Calcula TMB, GET e VET com base nos dados corporais e treinos | VET, macronutrientes, cenarios (treino/descanso) |
+| 3 | [Plano Alimentar](/docs/modulos/dieta) | Monta refeicoes com alimentos concretos e distribui macros | Dieta completa para o paciente |
+
+## Etapa 1: Antropometria
+
+O ponto de partida e o registro das medidas corporais. Voce informa peso, altura, dobras cutaneas e circunferencias. O sistema calcula automaticamente a composicao corporal usando protocolos cientificos.
+
+**Dados que fluem para o Calculo:**
+- Peso e altura (obrigatorios)
+- Idade e sexo biologico
+- Massa magra (quando calculada via protocolo de dobras ou bioimpedancia)
+- Percentual de gordura corporal
+
+<Callout type="info" title="Importacao automatica">
+Ao criar um novo calculo a partir da aba de Antropometria, o sistema importa os dados mais recentes sem que voce precise digitar novamente.
+</Callout>
+
+## Etapa 2: Calculo Nutricional
+
+Com os dados da antropometria, voce escolhe a formula de TMB e o fator de atividade. O sistema calcula o gasto energetico e permite ajustar o VET conforme o objetivo do paciente.
+
+Se o paciente treina, voce cadastra as sessoes de exercicio e o sistema gera cenarios automaticamente — por exemplo, um cenario para dias de treino e outro para dias de descanso.
+
+**Dados que fluem para o Plano Alimentar:**
+- VET (meta calorica) por cenario
+- Distribuicao de macronutrientes (proteinas, carboidratos, gorduras)
+- Cenarios com metas independentes
+- Gastos energeticos de referencia (TMB, GET)
+- Distribuicao por refeicao (quando definida)
+
+## Etapa 3: Plano Alimentar
+
+O plano alimentar recebe as metas do calculo e permite que voce monte as refeicoes com alimentos concretos. Cada cenario importado mantem suas metas independentes — voce pode ter uma dieta para dia de treino e outra para dia de descanso, cada uma com seus alimentos e quantidades.
+
+Na montagem, voce busca alimentos no banco com mais de 13.000 itens, define quantidades e medidas caseiras, e o sistema calcula os macros em tempo real.
+
+## Recalculo automatico
+
+A grande vantagem do pipeline e o recalculo em cascata. Quando voce registra uma nova avaliacao antropometrica com peso diferente:
+
+1. O peso atualizado fica disponivel para importacao
+2. Ao criar um novo calculo importando esses dados, o sistema recalcula TMB, GET e VET automaticamente
+3. As novas metas podem ser importadas no plano alimentar
+
+<Callout type="warn" title="Recalculo nao e destrutivo">
+O pipeline cria novos registros — nao sobrescreve os antigos. Voce pode manter o historico de todos os calculos e planos alimentares anteriores para comparar a evolucao do paciente.
+</Callout>
+
+## Cenarios de treino e descanso
+
+Os cenarios sao o diferencial do pipeline. Em vez de uma meta unica para todos os dias, o sistema permite metas diferenciadas:
+
+| Cenario | Caracteristica |
+|---------|---------------|
+| **Dia de treino** | VET mais alto, mais carboidratos para performance |
+| **Dia de descanso** | VET mais baixo, foco em recuperacao |
+| **Dia de treino especifico** | Metas adaptadas ao tipo de exercicio (musculacao vs cardio) |
+
+Cada cenario flui do calculo para o plano alimentar com suas metas independentes. Voce monta refeicoes diferentes para cada contexto.
+
+## Fluxo completo na pratica
+
+<Steps>
+
+<Step>
+### Registre a Antropometria
+
+Acesse a aba Antropometria do paciente e crie um registro com peso, altura e demais medidas. Salve.
+</Step>
+
+<Step>
+### Crie o Calculo Nutricional
+
+Va para a aba Calculo, clique em "Novo Calculo" — os dados da antropometria sao importados automaticamente. Escolha a formula de TMB, defina o fator de atividade, cadastre treinos e ajuste o VET. Salve.
+</Step>
+
+<Step>
+### Monte o Plano Alimentar
+
+Va para a aba Dieta, clique em "Novo Plano" e importe as metas do calculo. Os cenarios aparecem automaticamente. Distribua os macros por refeicao e adicione alimentos concretos. Salve.
+</Step>
+
+</Steps>
+
+## Modulos relacionados
+
+<Cards>
+<Card title="Antropometria" href="/docs/modulos/antropometria">
+Medidas corporais, protocolos de dobras e composicao corporal.
+</Card>
+<Card title="Calculo Nutricional" href="/docs/modulos/calculo">
+TMB, GET, VET, treinos por MET e cenarios.
+</Card>
+<Card title="Plano Alimentar" href="/docs/modulos/dieta">
+Refeicoes, alimentos, macros e distribuicao nutricional.
+</Card>
+</Cards>

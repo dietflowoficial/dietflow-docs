@@ -1,0 +1,60 @@
+{
+  "spec_id": "032-dietflow-docs-content",
+  "title": "DietFlow Docs Content - Prescricao + Secondary Modules",
+  "phases": [
+    {
+      "id": "phase-1-prescricao",
+      "name": "Prescricao Documentation",
+      "subtasks": [
+        {
+          "id": "subtask-5",
+          "title": "Write prescricao documentation (guide + module reference)",
+          "description": "Replace placeholder content in guias/prescricao.mdx and modulos/prescricao.mdx with real documentation based on source code discovery.",
+          "status": "complete",
+          "files_to_modify": [
+            "content/docs/guias/prescricao.mdx",
+            "content/docs/modulos/prescricao.mdx"
+          ],
+          "patterns_from": [
+            "content/docs/guias/exames.mdx",
+            "content/docs/guias/anamnese.mdx",
+            "content/docs/modulos/exames.mdx"
+          ],
+          "verification": {
+            "command": "npx next build",
+            "expected": "Build succeeds with no errors"
+          }
+        }
+      ]
+    },
+    {
+      "id": "phase-2-secondary-modules",
+      "name": "Secondary Modules Documentation (Tarefas, Textos, Forms)",
+      "subtasks": [
+        {
+          "id": "subtask-7",
+          "title": "Write secondary modules documentation (tarefas guide + tarefas/textos/forms module references)",
+          "description": "Validate existing content in guias/tarefas.mdx, modulos/tarefas.mdx, modulos/textos.mdx against source code and replace placeholder in modulos/forms.mdx with full documentation.",
+          "status": "complete",
+          "files_to_modify": [
+            "content/docs/guias/tarefas.mdx",
+            "content/docs/modulos/tarefas.mdx",
+            "content/docs/modulos/textos.mdx",
+            "content/docs/modulos/forms.mdx"
+          ],
+          "patterns_from": [
+            "content/docs/guias/exames.mdx",
+            "content/docs/modulos/exames.mdx",
+            "content/docs/modulos/prescricao.mdx"
+          ],
+          "verification": {
+            "command": "npx next build",
+            "expected": "Build succeeds with no errors"
+          }
+        }
+      ]
+    }
+  ],
+  "created_at": "2026-04-06T00:00:00Z",
+  "updated_at": "2026-04-06T18:00:00Z"
+}

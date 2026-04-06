@@ -1,0 +1,95 @@
+---
+title: Favoritos e Templates
+description: Como funciona o sistema de conteudos reutilizaveis do DietFlow — favoritos, templates, importacao, duplicatas e cadastrados.
+---
+
+O DietFlow permite que voce salve qualquer registro clinico como **favorito** (template reutilizavel). Isso evita retrabalho: em vez de montar tudo do zero a cada paciente, voce importa um template pronto e ajusta o que for necessario.
+
+## Como funciona
+
+Todo registro clinico de paciente pode ser salvo como template. O template e uma copia independente — alterar o template nao afeta o registro original do paciente, e vice-versa.
+
+Os templates ficam centralizados em **Meus Conteudos → Favoritos**, organizados por modulo.
+
+## Favoritos por modulo
+
+| Modulo | O que voce salva | Exemplo |
+|--------|------------------|---------|
+| **Dieta** | Planos alimentares completos | "Dieta 2000kcal - Hipertrofia" |
+| **Anamnese** | Modelos de anamnese com blocos pre-montados | "Anamnese Padrao Gestante" |
+| **Receitas** | Receitas culinárias com ingredientes e modo de preparo | "Vitamina Proteica Banana" |
+| **Exames** | Conjuntos de marcadores para prescrever | "Check-up Anual Padrao" |
+| **Prescricao** | Formulacoes e suplementos pre-montados | "Kit Imunidade Basico" |
+| **Textos** | Mensagens, documentos e observacoes padrao | "Orientacoes Pos-Consulta" |
+| **Refeicoes** | Refeicoes individuais com alimentos e quantidades | "Cafe da Manha Proteico" |
+
+<Callout type="info" title="Tags para organizar">
+Voce pode adicionar tags aos seus favoritos (ex: "vegano", "gestante", "low carb") para filtra-los rapidamente na hora de importar.
+</Callout>
+
+## Salvando um favorito
+
+Ao editar um registro de paciente, use a opcao **Favoritar** no menu do editor. O sistema cria uma copia como template. Voce pode:
+
+- Dar um nome descritivo ao template
+- Adicionar tags de organizacao
+- Editar o template depois em Meus Conteudos
+
+## Importando um template
+
+Ao criar um novo registro de paciente, use a opcao **Importar Favoritos** no menu do editor. A janela de importacao permite:
+
+- Navegar pelos templates do modulo
+- Filtrar por tags
+- Buscar por nome
+- Selecionar um ou mais templates (dependendo do modulo)
+
+O conteudo do template e carregado no editor. Voce pode editar livremente antes de salvar — o template original nao e alterado.
+
+## Deteccao de duplicatas
+
+Ao salvar um favorito ou importar um template, o DietFlow verifica automaticamente se ja existe conteudo muito parecido. Se encontrar, voce recebe um aviso com tres opcoes:
+
+- **Criar mesmo assim** — salva como novo, mantendo ambos
+- **Substituir existente** — atualiza o template antigo com o conteudo novo
+- **Cancelar** — volta sem salvar
+
+Isso evita acumular templates repetidos ao longo do tempo.
+
+## Cadastrados — itens personalizados
+
+Alem dos favoritos, voce pode cadastrar itens proprios que complementam os catalogos do sistema:
+
+### Alimentos
+
+Cadastre alimentos que nao existem nos bancos padrao (TACO, TBCA, IBGE, USDA). Os alimentos personalizados aparecem na busca ao montar planos alimentares, junto com os mais de 13 mil alimentos do catalogo.
+
+### Substancias e Suplementos
+
+Cadastre substancias ativas e suplementos comerciais proprios. Eles aparecem na busca ao montar prescricoes.
+
+Para substancias e suplementos, voce pode copiar itens do catalogo do sistema e personaliza-los — alterando nome, dosagem ou composicao conforme sua necessidade.
+
+### Exames
+
+Cadastre marcadores de exame que nao existem no catalogo padrao. Eles aparecem na busca ao prescrever ou registrar resultados de exames.
+
+Assim como substancias, voce pode copiar marcadores do catalogo e personaliza-los.
+
+## Formularios
+
+A secao de Formularios e independente do sistema de favoritos. Aqui voce cria questionarios personalizados para enviar aos seus pacientes — anamneses previas, recordatorios alimentares, pesquisas de satisfacao ou qualquer outro tipo de coleta de dados.
+
+O paciente recebe um link, preenche o formulario, e as respostas ficam disponiveis diretamente no DietFlow.
+
+<Callout type="warn" title="Formularios nao sao favoritos">
+Formularios sao criados diretamente em Meus Conteudos — eles nao vem de registros de paciente. Sao templates de coleta de dados, nao copias de conteudo clinico.
+</Callout>
+
+## Resumo da estrutura
+
+| Secao | O que contem | Como chega la |
+|-------|-------------|---------------|
+| **Favoritos** | Templates salvos a partir de registros de pacientes | Favoritar no editor do paciente |
+| **Cadastrados** | Alimentos, substancias e exames personalizados | Criar diretamente em Cadastrados |
+| **Formularios** | Questionarios para enviar a pacientes | Criar diretamente em Formularios |

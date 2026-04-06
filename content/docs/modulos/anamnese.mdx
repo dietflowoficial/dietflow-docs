@@ -1,0 +1,122 @@
+---
+title: Anamnese
+description: Registros de anamnese com blocos arrastaveis e widgets especializados.
+---
+
+A anamnese e o primeiro contato clinico documentado com o paciente. No DietFlow, ela funciona como um **formulario montavel**: voce escolhe quais blocos incluir, organiza por arrastar-e-soltar e preenche diretamente na ficha. Cada bloco e um widget especializado que captura um tipo de informacao — desde texto livre ate escalas clinicas validadas.
+
+## Como funciona o editor
+
+O editor de anamnese usa o sistema de **Composer** — um construtor de formularios com blocos arrastaveis. Voce monta o formulario adicionando blocos, reordena arrastando, e preenche os dados do paciente.
+
+### Adicionar blocos
+
+Clique em **Adicionar Bloco** para abrir o painel lateral. Os blocos estao organizados por categoria e voce pode buscar pelo nome. O painel permanece aberto enquanto voce adiciona varios blocos de uma vez.
+
+### Arrastar e soltar
+
+Cada bloco tem uma alca de movimentacao. Arraste para reordenar os blocos na sequencia que preferir. A ordem e salva automaticamente.
+
+### Remover blocos
+
+Para remover um bloco, clique no botao de excluir no canto do bloco. Os dados daquele bloco sao removidos do registro.
+
+## Tipos de bloco
+
+Os blocos estao organizados em 5 categorias:
+
+### Rotina
+
+| Bloco | O que registra |
+|-------|---------------|
+| **Rotina Alimentar** | Refeicoes do dia com horarios, alimentos e quantidades. Permite registrar o padrao alimentar do paciente de forma estruturada. |
+| **Hidratacao** | Consumo diario de agua e outros liquidos, com controle de quantidade. |
+
+### Avaliacao
+
+| Bloco | O que registra |
+|-------|---------------|
+| **Sono** | Qualidade do sono com a escala ISI (Indice de Gravidade da Insonia). Disponivel em dois modos: triagem rapida (ISI-3, 3 perguntas) e avaliacao completa (ISI-7, 7 perguntas). Calcula automaticamente o score e classifica a gravidade. |
+| **Bristol** | Escala de Bristol para classificacao das fezes (tipos 1 a 7), frequencia evacuatoria e sintomas gastrointestinais como distensao, flatulencia e dor abdominal. Calcula um score gastrointestinal automatico. |
+
+### Saude
+
+| Bloco | O que registra |
+|-------|---------------|
+| **Problemas de Saude** | Historico de doencas, condicoes cronicas e queixas atuais do paciente. |
+| **Medicacoes** | Medicamentos em uso, com nome, dosagem e frequencia. |
+
+### Acompanhamento
+
+| Bloco | O que registra |
+|-------|---------------|
+| **Adesao** | Avaliacao da adesao ao tratamento nutricional. Ajuda a monitorar o engajamento do paciente entre consultas. |
+
+### Texto
+
+| Bloco | O que registra |
+|-------|---------------|
+| **Texto Livre** | Bloco aberto para anotacoes, observacoes ou qualquer informacao que nao se encaixe nos widgets estruturados. Use para perguntas abertas, impressoes clinicas ou anotacoes rapidas. |
+
+<Callout type="info" title="Blocos com score automatico">
+Os blocos de **Sono** (ISI) e **Bristol** calculam scores clinicos automaticamente a partir das respostas. Voce ve o resultado em tempo real enquanto preenche, com classificacao por faixas de gravidade e semaforo visual.
+</Callout>
+
+## Modo edicao e modo preview
+
+O editor trabalha em dois modos:
+
+- **Edicao** — voce preenche os campos, adiciona e reordena blocos. E o modo padrao ao abrir um registro.
+- **Preview** — visualizacao limpa dos dados preenchidos, como ficara ao exportar. Util para revisar antes de imprimir ou gerar PDF.
+
+O preview pode ser visto de duas formas:
+- **Visual** — mostra os blocos com formatacao rica (graficos, scores, semaforos)
+- **Texto** — mostra o conteudo como texto corrido, ideal para copiar e colar
+
+## Templates e favoritos
+
+O sistema de templates permite reaproveitar a estrutura de uma anamnese em novas consultas.
+
+### Salvar como favorito
+
+Depois de montar uma anamnese com os blocos que voce usa no dia a dia, clique em **Favoritar** no menu do editor. A estrutura e salva como template, sem os dados do paciente.
+
+### Importar template
+
+Ao criar um novo registro de anamnese, clique em **Importar Favorito** para carregar um template salvo. Os blocos vem organizados e prontos para preencher — so falta inserir os dados do paciente.
+
+<Callout type="info" title="Templates preservam estrutura, nao dados">
+Quando voce favorita uma anamnese, apenas a estrutura (quais blocos e em que ordem) e salva. Os dados preenchidos do paciente nao sao copiados para o template.
+</Callout>
+
+### Gerenciar templates
+
+Seus templates de anamnese ficam em **Meus Conteudos → Favoritos → Anamnese**. La voce pode editar a estrutura, renomear ou excluir templates que nao usa mais.
+
+## Copiar texto
+
+O botao **Copiar Texto** no menu do editor converte toda a anamnese em texto formatado e copia para a area de transferencia. Util para colar em prontuarios externos, laudos ou mensagens.
+
+## Exportar
+
+Voce pode exportar a anamnese em diferentes formatos:
+
+- **PDF** — documento formatado para impressao ou arquivo
+- **HTML** — versao web que pode ser aberta em qualquer navegador
+
+Para exportar, clique no botao de exportacao no menu do editor e escolha o formato desejado.
+
+<Callout type="info" title="Salve antes de exportar">
+O sistema salva automaticamente o registro antes de gerar a exportacao, garantindo que o documento exportado esta atualizado.
+</Callout>
+
+## Deteccao de duplicatas
+
+O DietFlow detecta automaticamente quando voce tenta salvar como favorito uma anamnese que ja tem estrutura identica a um template existente. Isso evita duplicatas na sua biblioteca de favoritos.
+
+## Dicas de uso
+
+- Monte um template base com os blocos que voce usa em toda primeira consulta (rotina alimentar, hidratacao, sono, problemas de saude, medicacoes)
+- Use o bloco de texto livre para perguntas especificas do caso
+- Aproveite os scores automaticos do ISI e Bristol para acompanhar evolucao entre consultas
+- Na rotina alimentar, registre horarios para identificar padroes de jejum ou omissao de refeicoes

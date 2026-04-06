@@ -1,0 +1,121 @@
+---
+title: Exportacao
+description: Formatos disponiveis, opcoes por modulo e detalhes tecnicos do sistema de exportacao.
+---
+
+O sistema de exportacao do DietFlow permite gerar documentos a partir de qualquer registro clinico. Cada modulo tem opcoes especificas que controlam o que entra no documento final.
+
+## Formatos disponiveis
+
+| Formato | Descricao | Quando usar |
+|---------|-----------|-------------|
+| **HTML Interativo** | Arquivo auto-contido com graficos, secoes colapsaveis e layout responsivo. Funciona offline no navegador | Enviar para paciente por e-mail ou WhatsApp |
+| **PDF** | Documento estatico, ideal para impressao e arquivamento | Laudos, relatorios para outros profissionais |
+| **Imprimir** | Abre o dialogo de impressao do navegador. Voce pode imprimir fisicamente ou salvar como PDF | Impressao rapida no consultorio |
+| **Copiar Texto** | Copia conteudo formatado para a area de transferencia | Colar em prontuario eletronico, mensagem ou documento |
+| **CSV** | Exporta dados em formato tabular (planilha) | Analise de dados, importacao em outros sistemas |
+
+## Opcoes por modulo
+
+Cada modulo oferece opcoes especificas para personalizar o conteudo exportado. A pre-visualizacao no modal atualiza em tempo real conforme voce altera as opcoes.
+
+### Dieta
+
+| Opcao | Padrao | Descricao |
+|-------|--------|-----------|
+| Incluir planejamento | Ativado | Mostra resumo do plano: total de cenarios, refeicoes e VET medio |
+| Incluir cenarios | Ativado | Mostra os cenarios com refeicoes e alimentos |
+| Selecionar cenarios | Todos | Quando o plano tem mais de um cenario, permite escolher quais incluir |
+| Incluir nutrientes | Ativado | Tabela de macros e micronutrientes no final |
+| Incluir receitas | Desativado | Detalhes de preparo dos alimentos que possuem receita |
+| Incluir lista de compras | Desativado | Lista consolidada de ingredientes |
+| Mostrar macros por refeicao | Ativado | Exibe macronutrientes em cada refeicao |
+| Mostrar fotos | Ativado | Fotos dos alimentos (quando disponiveis) |
+
+### Anamnese
+
+| Opcao | Padrao | Descricao |
+|-------|--------|-----------|
+| Modo visual rico | Ativado | Visual formatado com blocos e widgets. Desativado: texto simples |
+
+### Antropometria
+
+| Opcao | Padrao | Descricao |
+|-------|--------|-----------|
+| Medidas basicas | Ativado | Peso, altura, IMC, RCQ |
+| Composicao corporal | Ativado | Resultados do protocolo de dobras selecionado |
+| Bioimpedancia | Ativado | Dados de bioimpedancia detalhados (se disponivel) |
+
+### Exames
+
+| Opcao | Padrao | Descricao |
+|-------|--------|-----------|
+| Valores de referencia | Ativado | Mostra faixa de normalidade ao lado do resultado |
+| Destacar alterados | Ativado | Realca valores fora da referencia com destaque visual |
+
+### Prescricao
+
+| Opcao | Padrao | Descricao |
+|-------|--------|-----------|
+| Incluir dosagem | Ativado | Quantidade e frequencia de cada item |
+| Instrucoes de uso | Ativado | Como e quando tomar |
+| Incluir formulacoes | Ativado | Formulas manipuladas com composicao |
+| Incluir suplementos | Ativado | Suplementos comerciais |
+| Incluir orientacoes | Ativado | Textos de orientacao livre |
+
+### Evolucao
+
+| Opcao | Padrao | Descricao |
+|-------|--------|-----------|
+| Periodo | 3 meses | Periodo de analise (1 mes, 3 meses, 6 meses, 1 ano ou todo historico) |
+| Cards de variacao | Ativado | Mostra evolucao de peso, gordura, massa magra e IMC |
+| Grafico de evolucao | Ativado | Grafico de linhas com metricas ao longo do tempo |
+| Tabela de registros | Ativado | Ultimos registros de antropometria |
+
+### Formularios
+
+| Opcao | Padrao | Descricao |
+|-------|--------|-----------|
+| Modo visual rico | Ativado | Visual formatado com campos. Desativado: texto simples |
+
+### Calculo Nutricional e Textos
+
+Esses modulos nao possuem opcoes de personalizacao — o documento exportado inclui todo o conteudo do registro.
+
+## Exportacao em lote
+
+Voce pode selecionar varios registros na listagem de qualquer modulo e exportar todos de uma vez. No modo em lote:
+
+- O sistema processa cada registro sequencialmente, mostrando o progresso
+- Cenarios de dieta sao exportados completos (sem selecao individual)
+- O documento final consolida todos os registros selecionados
+
+## Local de atendimento
+
+O modal de exportacao permite selecionar qual local de atendimento aparece no cabecalho do documento. Isso inclui:
+
+- Nome e endereco do local
+- Dados profissionais (CRN, logo)
+- Informacoes de contato
+
+Se voce tem apenas um local cadastrado, ele e selecionado automaticamente.
+
+## Modulos exportaveis
+
+| Modulo | Exporta? |
+|--------|----------|
+| Anamnese | Sim |
+| Antropometria | Sim |
+| Calculo Nutricional | Sim |
+| Dieta (Plano Alimentar) | Sim |
+| Exames | Sim |
+| Prescricao | Sim |
+| Formularios | Sim |
+| Textos | Sim |
+| Evolucao | Sim (fluxo especial) |
+| Tarefas | Nao |
+| Agenda | Nao |
+
+<Callout type="info" title="Limite de exportacoes">
+O plano FREE permite 10 exportacoes por mes. O plano PRO tem exportacoes ilimitadas. Veja [Planos e Precos](/docs/referencia/planos-e-precos) para detalhes.
+</Callout>

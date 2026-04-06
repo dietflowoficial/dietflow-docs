@@ -1,0 +1,19 @@
+{
+  "spec_id": "032-dietflow-docs-content",
+  "title": "DietFlow Docs Content - Prescricao + Secondary Modules",
+  "current_phase": "complete",
+  "phases": {
+    "discovery": "complete",
+    "plan": "complete",
+    "code": "complete",
+    "qa": "complete"
+  },
+  "code_progress": {
+    "total_subtasks": 3,
+    "completed": 3,
+    "current_subtask": null
+  },
+  "qa_verdict": "approved",
+  "qa_iteration": 1,
+  "updated_at": "2026-04-06T21:30:00Z"
+}

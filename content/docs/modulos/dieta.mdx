@@ -1,0 +1,147 @@
+---
+title: Plano Alimentar
+description: Refeicoes, alimentos e distribuicao de macros.
+---
+
+O modulo de Plano Alimentar e onde voce monta a dieta do paciente com refeicoes, alimentos e metas nutricionais. O DietFlow importa automaticamente as metas de calorias e macros do Calculo Nutricional, distribui entre as refeicoes e permite que voce ajuste tudo com precisao — incluindo cenarios diferenciados para dias de treino e descanso.
+
+Para o passo a passo de como criar um plano, veja o [guia de plano alimentar](/docs/guias/plano-alimentar).
+
+## Como funciona
+
+O editor de plano alimentar e dividido em duas abas:
+
+- **Planejamento Nutricional** — onde voce define metas, cenarios e distribuicao de macros por refeicao
+- **Montagem das Refeicoes** — onde voce adiciona alimentos concretos a cada refeicao
+
+O planejamento e a montagem trabalham juntos: as metas definidas no planejamento servem de referencia para a montagem, e o sistema mostra em tempo real se cada refeicao esta atingindo as metas calculadas.
+
+## Cenarios
+
+Cada plano alimentar pode ter multiplos cenarios — por exemplo, um para dias de treino e outro para dias de descanso. Cada cenario tem metas energeticas e de macros independentes.
+
+Voce pode:
+
+- **Importar cenarios do Calculo** — o sistema traz automaticamente os cenarios gerados com base nos treinos do paciente
+- **Criar cenarios manualmente** — definindo nome e metas para cada um
+- **Alternar entre cenarios** — para ajustar a dieta de cada contexto separadamente
+
+<Callout type="info" title="Isolamento de cenarios">
+Cada cenario tem estado completamente independente. Mudancas no cenario "Treino" nao afetam o cenario "Descanso" — e vice-versa.
+</Callout>
+
+## Planejamento Nutricional
+
+Na aba de planejamento, voce configura as metas energeticas e a distribuicao de macronutrientes.
+
+### Metas energeticas
+
+O VET (meta calorica total) pode vir importado do Calculo Nutricional ou ser definido manualmente. A partir do VET, voce define a distribuicao de macros:
+
+- **Proteinas** — percentual e gramas totais
+- **Carboidratos** — percentual e gramas totais
+- **Gorduras** — percentual e gramas totais
+
+O controle e feito por sliders interativos: ao ajustar um macronutriente, os outros se redistribuem automaticamente para manter 100%.
+
+### Distribuicao por refeicao
+
+Apos definir os macros totais, voce distribui entre as refeicoes do dia. O sistema oferece estrategias de distribuicao:
+
+| Estrategia | Como funciona |
+|-----------|--------------|
+| **Igualitaria** | Divide calorias e macros igualmente entre todas as refeicoes |
+| **Pre-treino** | Concentra mais carboidratos nas refeicoes proximas ao treino |
+| **Customizada** | Voce define manualmente o percentual de cada refeicao |
+
+Cada refeicao mostra suas metas teoricas de calorias, proteinas, carboidratos e gorduras.
+
+### Modos de operacao
+
+| Modo | Comportamento |
+|------|--------------|
+| **Meta (VET fixo)** | O VET total e mantido fixo. Ao customizar uma refeicao, as demais se ajustam para compensar |
+| **Livre (VET expande)** | Ao customizar uma refeicao, o VET total pode aumentar para acomodar |
+
+### Ajuste de objetivo
+
+Voce pode definir o objetivo do paciente diretamente no planejamento:
+
+- **Por meta de peso** — informe o peso desejado e o tempo, e o sistema calcula o ajuste calorico
+- **Por VET direto** — informe o VET desejado manualmente
+
+### Gastos energeticos
+
+Se o plano foi criado a partir de um calculo, o sistema exibe os gastos energeticos (TMB, GET, VET) como referencia no topo do planejamento. Esses valores ajudam na tomada de decisao ao ajustar as metas.
+
+## Montagem das Refeicoes
+
+Na aba de montagem, voce adiciona os alimentos concretos a cada refeicao.
+
+### Criar refeicoes
+
+Cada refeicao tem:
+
+- **Nome** (ex: Cafe da manha, Almoco, Lanche pre-treino)
+- **Horario**
+- **Observacoes** (orientacoes para o paciente)
+- **Lista de alimentos** com quantidades e medidas
+
+Voce pode arrastar refeicoes para reordena-las e duplicar refeicoes existentes.
+
+### Busca de alimentos
+
+O DietFlow possui um banco com mais de 13.000 alimentos de 5 fontes oficiais:
+
+| Fonte | Descricao |
+|-------|-----------|
+| **TACO** | Tabela Brasileira de Composicao de Alimentos (UNICAMP) |
+| **TBCA** | Tabela Brasileira de Composicao de Alimentos (USP) |
+| **IBGE/POF** | Pesquisa de Orcamentos Familiares |
+| **USDA** | Standard Reference Legacy (EUA) |
+| **Tucunduva** | Tabela de Composicao de Alimentos (dados detalhados de fibras e iodo) |
+
+Alem das fontes oficiais, voce pode cadastrar alimentos proprios na secao [Meus Conteudos](/docs/guias/meus-conteudos).
+
+A busca e instantanea: digite o nome do alimento e selecione na lista. O sistema carrega automaticamente todas as informacoes nutricionais.
+
+### Medidas caseiras
+
+Cada alimento tem medidas caseiras predefinidas (colher de sopa, xicara, unidade, fatia, etc.). Ao selecionar uma medida, o sistema converte automaticamente a quantidade em gramas e calcula os macros proporcionalmente.
+
+### Receitas
+
+Alem de alimentos individuais, voce pode adicionar receitas cadastradas. Uma receita e um conjunto de alimentos com quantidades predefinidas — ao adicionar a receita, todos os ingredientes e seus macros sao contabilizados automaticamente.
+
+### Resumo por refeicao
+
+Cada refeicao exibe um resumo de macros em tempo real:
+
+- Calorias totais
+- Proteinas (g)
+- Carboidratos (g)
+- Gorduras (g)
+
+Se o planejamento definiu metas teoricas, o sistema mostra a comparacao entre o planejado e o real.
+
+### Painel de nutrientes
+
+Para cada alimento, voce pode abrir o detalhamento completo de nutrientes — incluindo minerais, vitaminas e perfil lipidico, quando disponiveis na fonte de dados.
+
+## Favoritos e templates
+
+Voce pode salvar planos alimentares e refeicoes individuais como favoritos para reutilizar com outros pacientes:
+
+- **Planos completos** — salvam todos os cenarios, metas e refeicoes
+- **Dietas** — salvam um cenario com suas refeicoes
+- **Refeicoes individuais** — salvam uma refeicao com seus alimentos
+
+Para importar um favorito, clique em **Importar** ao criar um novo plano. O sistema detecta automaticamente se o conteudo e duplicado.
+
+## Exportacao
+
+O plano alimentar pode ser exportado em PDF e HTML. A exportacao inclui todas as refeicoes com seus alimentos, quantidades, medidas caseiras e macros.
+
+<Callout type="info" title="Pipeline Clinico">
+O plano alimentar e o ultimo elo do pipeline Antropometria → Calculo → Dieta. Para entender como os dados fluem entre os modulos, veja a [referencia do Pipeline Clinico](/docs/referencia/pipeline-clinico).
+</Callout>

@@ -1,0 +1,85 @@
+---
+title: Configuracao de Agenda
+description: Defina seus horarios de disponibilidade, intervalos entre consultas e duracoes.
+---
+
+As configuracoes de agenda definem **quando voce esta disponivel** para atender. O sistema usa essas informacoes para calcular os horarios livres mostrados no calendario e validar agendamentos.
+
+## Acessando as Configuracoes
+
+Voce pode acessar as configuracoes de agenda de duas formas:
+
+- Pelo menu **Configuracoes → Profissional → Locais de Atendimento** (gerenciar locais e horarios)
+- Pelo **icone de engrenagem** dentro da propria Agenda (abre o painel de configuracoes com abas)
+
+## Disponibilidade
+
+### Agenda Padrao
+
+A agenda padrao define os horarios gerais de atendimento. Voce configura:
+
+- **Dias da semana ativos** — quais dias voce atende (ex: segunda a sexta)
+- **Horario de inicio e fim** — faixa de atendimento para cada dia (ex: 8h as 18h)
+
+Esses horarios sao usados como base para calcular os slots disponiveis no calendario.
+
+### Agendas por Local
+
+Se voce atende em mais de um local, cada local pode ter **horarios proprios**. Isso permite configuracoes como:
+
+- **Consultorio A** — segunda, quarta e sexta, 8h as 17h
+- **Consultorio B** — terca e quinta, 9h as 18h
+- **Online** — sabados, 9h as 12h
+
+Para criar uma nova agenda por local, clique em **Nova Agenda** dentro das configuracoes. Cada agenda aparece como um card que voce pode editar, duplicar ou excluir.
+
+<Callout type="info" title="Multiplas agendas">
+Voce pode ter quantas agendas precisar. O sistema combina todas as agendas ativas para mostrar sua disponibilidade completa no calendario.
+</Callout>
+
+## Duracoes e Intervalos
+
+### Duracao padrao da consulta
+
+Define quanto tempo cada consulta ocupa na agenda por padrao. As opcoes mais comuns sao 30, 45, 50 ou 60 minutos. Essa duracao e usada quando:
+
+- Voce clica em um horario para criar uma consulta
+- O plano de atendimento nao define duracao propria
+
+### Duracoes permitidas
+
+Voce pode definir quais duracoes sao aceitas na sua agenda (ex: 15, 30, 45 e 60 minutos). Ao agendar ou redimensionar uma consulta, apenas essas opcoes ficam disponiveis.
+
+### Intervalo entre consultas
+
+O intervalo define a **granularidade dos slots** na agenda. Com intervalo de 15 minutos, os horarios disponiveis sao mostrados a cada 15 minutos (8:00, 8:15, 8:30, etc.).
+
+## Visualizacao
+
+Na aba de Visualizacao das configuracoes da agenda, voce pode ajustar preferencias visuais do calendario, como a visualizacao padrao ao abrir a agenda.
+
+## Como a Disponibilidade Afeta a Agenda
+
+O motor de disponibilidade da agenda funciona em camadas:
+
+1. **Configuracao padrao** — seus horarios gerais de atendimento
+2. **Agenda por local** — horarios especificos de cada local (sobrepoe o padrao nos dias configurados)
+3. **Eventos de expansao** — abrem disponibilidade em dias normalmente indisponiveis (ex: um sabado especial)
+4. **Bloqueios** — fecham faixas horarias especificas (ex: almoco, ferias)
+
+O resultado final e a combinacao dessas camadas: o calendario mostra como **disponivel** apenas os horarios que passam por todas as regras.
+
+<Callout type="warn" title="Bloqueios e eventos">
+Bloqueios e eventos de expansao sao criados diretamente na agenda (nao nas configuracoes). Use bloqueios para marcar ferias, almoco ou imprevistos. Use eventos de expansao para abrir dias extras de atendimento.
+</Callout>
+
+## Resumo
+
+| Configuracao | O que controla |
+|--------------|---------------|
+| Dias ativos | Quais dias da semana voce atende |
+| Horario inicio/fim | Faixa de atendimento do dia |
+| Duracao padrao | Tempo reservado por consulta |
+| Duracoes permitidas | Opcoes de duracao ao agendar |
+| Intervalo | Granularidade dos slots (15, 30 min) |
+| Agendas por local | Horarios especificos por local de atendimento |

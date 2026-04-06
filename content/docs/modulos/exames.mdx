@@ -1,0 +1,145 @@
+---
+title: Exames
+description: Prescricao, registro de resultados e acompanhamento da evolucao de exames laboratoriais.
+---
+
+O modulo de Exames centraliza a gestao laboratorial do paciente. Voce prescreve exames, registra resultados e acompanha a evolucao ao longo do tempo — tudo em um unico lugar, com graficos automaticos e alertas de valores fora da referencia.
+
+## Visao geral
+
+O modulo se divide em tres areas principais, acessiveis como sub-abas dentro do perfil do paciente:
+
+| Sub-aba | Funcao |
+|---------|--------|
+| **Prescricao** | Criar listas de exames a solicitar |
+| **Resultados** | Registrar valores obtidos nos exames |
+| **Evolucao** | Visualizar graficos e comparar ao longo do tempo |
+
+## Prescricao de exames
+
+A prescricao funciona com **grupos de exames**. Cada grupo contem um ou mais exames relacionados — por exemplo, um grupo "Perfil Lipidico" pode reunir Colesterol Total, HDL, LDL e Triglicerideos.
+
+### Como funciona
+
+1. Crie um novo registro na sub-aba **Prescricao**
+2. Adicione grupos com o botao **"Novo Grupo"**
+3. Dentro de cada grupo, busque exames no catalogo pelo nome
+4. Configure amostra e condicao de coleta para cada item
+5. Reordene os grupos arrastando-os pela alca lateral
+6. Salve e exporte como PDF ou HTML
+
+### Adicionar em massa
+
+O botao **"Adicionar em Massa"** abre um painel de busca com todos os marcadores disponiveis. Voce seleciona varios exames de uma vez, incluindo packs completos, e o sistema adiciona todos ao grupo.
+
+<Callout type="info" title="Absorcao inteligente de packs">
+Ao adicionar um pack (como "Hemograma Completo"), o sistema absorve automaticamente qualquer subitem que voce ja tenha adicionado individualmente, evitando duplicatas.
+</Callout>
+
+### Importar de favoritos
+
+Se voce costuma solicitar os mesmos exames, salve a prescricao como favorito. Na proxima vez, clique em **"Importar"** para carregar o template completo. Voce pode importar substituindo o conteudo atual ou mesclando com os exames ja adicionados.
+
+## Catalogo de marcadores
+
+O DietFlow vem com um catalogo de marcadores laboratoriais do sistema, organizados por categorias. Cada marcador inclui:
+
+- **Nome** — identificacao do exame (ex.: Glicose de Jejum)
+- **Tipo** — Individual, Pack (conjunto de subitens) ou Concatenado
+- **Amostras** — materiais aceitos (sangue, soro, urina, fezes, saliva)
+- **Condicoes** — preparo necessario (jejum, livre, etc.)
+- **Unidades de medida** — com valores de referencia por sexo e faixa etaria
+- **Orientacoes** — instrucoes adicionais para o paciente
+
+### Tipos de exame
+
+| Tipo | Descricao | Exemplo |
+|------|-----------|---------|
+| **Individual** | Exame unico com um resultado | Glicose, Acido Urico |
+| **Pack** | Conjunto de subitens agrupados | Hemograma Completo |
+| **Concatenado** | Exame composto com subitens encadeados | Perfil Tireoidiano |
+
+### Cadastrar exames personalizados
+
+Voce pode criar seus proprios marcadores em **Meus Conteudos → Cadastrados → Exames**. Defina:
+
+- Nome e tipo do exame
+- Amostras e condicoes de coleta
+- Unidades de medida com valores de referencia (minimo, maximo, ideal)
+- Subitens para exames compostos
+- Orientacoes para o paciente
+
+<Callout type="warn" title="Exames rascunho">
+Exames criados por voce ficam inicialmente como rascunho (uso pessoal). Para uso no catalogo geral, eles precisam ser publicados pelo sistema.
+</Callout>
+
+## Registro de resultados
+
+A sub-aba **Resultados** permite registrar os valores obtidos nos exames. O fluxo e simples:
+
+1. Defina a **data da coleta**
+2. Selecione os exames a registrar (pelo catalogo ou importando da prescricao)
+3. Preencha o **valor** e a **unidade de medida** de cada exame
+4. O sistema calcula automaticamente o **status** do resultado
+
+### Status automatico
+
+Com base nos valores de referencia cadastrados, o sistema classifica cada resultado:
+
+| Status | Significado |
+|--------|-------------|
+| **Normal** | Dentro da faixa de referencia |
+| **Alto** | Acima do valor maximo |
+| **Baixo** | Abaixo do valor minimo |
+| **Otimo** | Na faixa ideal (quando definida) |
+| **Alterado** | Fora dos parametros esperados |
+| **Pendente** | Aguardando valor |
+
+<Callout type="info" title="Valores de referencia por perfil">
+O sistema considera sexo e faixa etaria do paciente ao aplicar os valores de referencia. Isso garante que a classificacao seja precisa para cada perfil.
+</Callout>
+
+### Gerenciar anexos
+
+Voce pode anexar arquivos de laudos e imagens ao registro de resultados. Use os botoes de **Anexos** para adicionar, visualizar ou comentar documentos associados.
+
+### Historico de registros
+
+Abaixo do card de registro, o historico exibe todos os resultados anteriores organizados por data. Voce pode:
+
+- Filtrar por periodo
+- Editar valores de registros anteriores
+- Remover exames individuais de um registro
+- Alterar a data de coleta em massa
+
+## Evolucao longitudinal
+
+A sub-aba **Evolucao** e o coracao do acompanhamento laboratorial. Selecione um exame e visualize a trajetoria dos resultados ao longo do tempo.
+
+### O que voce ve
+
+- **Cards de variacao** — mostra o valor atual e a diferenca em relacao ao registro anterior
+- **Grafico de evolucao** — linha do tempo com todos os resultados plotados
+- **Tabela recente** — os 5 ultimos resultados com data, valor, unidade e status
+
+### Filtros
+
+Use os filtros de periodo para focar em intervalos especificos (ultimo mes, trimestre, semestre, ano ou periodo personalizado). Os chips de datas permitem selecionar e comparar registros especificos.
+
+## Exportacao
+
+As prescricoes de exames podem ser exportadas nos seguintes formatos:
+
+- **PDF** — para imprimir e entregar ao paciente
+- **HTML** — para visualizar no navegador ou enviar digitalmente
+
+Voce pode exportar prescricoes individualmente ou selecionar varias para exportacao em lote.
+
+## Dicas de uso
+
+<Callout type="info" title="Fluxo recomendado">
+1. **Prescreva** os exames que deseja solicitar
+2. Exporte a prescricao como **PDF** e entregue ao paciente
+3. Quando os resultados chegarem, registre na sub-aba **Resultados**
+4. Acompanhe a evolucao na sub-aba **Evolucao** com graficos automaticos
+</Callout>

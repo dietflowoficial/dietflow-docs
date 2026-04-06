@@ -1,0 +1,88 @@
+---
+title: Profissional
+description: Configure seu perfil profissional, logo, descricao e locais de atendimento.
+---
+
+A pagina Profissional e onde voce configura as informacoes que identificam voce como nutricionista dentro do DietFlow. Essas informacoes tambem aparecem nos documentos exportados (PDFs, receituarios, laudos).
+
+## Dados Profissionais
+
+No card de dados profissionais voce define as informacoes que representam sua identidade clinica.
+
+### Nome profissional
+
+O nome que aparece nos cabecalhos dos seus documentos exportados. Pode ser diferente do nome da sua conta pessoal — por exemplo, voce pode incluir "Dr.", "Nutr." ou seu titulo completo. Clique no icone de edicao ao lado do nome para alterar.
+
+### Logo
+
+Envie o logo do seu consultorio ou clinica. Ele aparece no cabecalho de todos os documentos exportados (prescricoes, laudos, planos alimentares). Clique sobre o logo para enviar uma nova imagem ou remover a atual.
+
+### Descricao do cabecalho
+
+Um texto curto (ate 120 caracteres) que aparece como subtitulo abaixo do seu nome nos documentos. Use para incluir seu CRN, especialidade, telefone ou endereco. O editor permite formatacao basica (negrito, italico).
+
+Exemplos:
+- "Nutricionista Clinico - CRN-3 12345"
+- "Especialista em Nutricao Esportiva - (11) 99999-0000"
+- "CRN-2 54321 - Clinica Nutri Vida"
+
+<Callout type="info" title="Cabecalho dos documentos">
+O nome profissional, logo e descricao que voce definir aqui serao usados automaticamente em todos os documentos exportados pelo DietFlow (prescricoes, laudos, planos alimentares, etc.).
+</Callout>
+
+## Locais de Atendimento
+
+Abaixo dos dados profissionais, voce encontra a lista de locais onde atende. Cada local representa um endereco ou modalidade de atendimento.
+
+### Criar um local
+
+Ao criar um novo local, voce define:
+
+- **Nome** — identificacao do local (ex: "Consultorio Centro", "Atendimento Online")
+- **Modalidade** — Presencial, Online, ou ambos
+- **Endereco** — rua, numero, bairro, cidade, estado e CEP (para locais presenciais)
+- **Email e telefone** — dados de contato que aparecem no card do local
+
+### Gerenciar locais
+
+Cada local aparece como um card na lista, mostrando nome, modalidade e endereco. As acoes disponiveis sao:
+
+| Acao | O que faz |
+|------|-----------|
+| **Editar** | Clique no card para abrir a edicao do local |
+| **Definir como padrao** | Marca o local como padrao para novos agendamentos |
+| **Migrar pacientes** | Move pacientes de um local para outro |
+| **Arquivar** | Desativa o local sem apagar (pode restaurar depois) |
+
+<Callout type="info" title="Local padrao">
+O local marcado como padrao e pre-selecionado automaticamente ao criar novos agendamentos na agenda. Voce pode ter apenas um local padrao por vez.
+</Callout>
+
+### Modalidades de atendimento
+
+Cada local suporta tres modalidades:
+
+- **Presencial** — atendimento fisico no endereco cadastrado
+- **Online** — atendimento remoto (teleconsulta)
+- **Presencial + Online** — o local aceita ambas as modalidades
+
+O icone do card muda automaticamente para indicar a modalidade: um marcador de mapa para presencial, um monitor para online, ou um globo para ambos.
+
+### Locais e a Agenda
+
+Cada local de atendimento pode ter **horarios de disponibilidade proprios** configurados diretamente nas configuracoes da agenda. Isso permite que voce atenda em horarios diferentes dependendo do local.
+
+Por exemplo:
+- **Consultorio Centro** — segunda a sexta, 8h as 18h
+- **Atendimento Online** — sabados, 9h as 12h
+
+A agenda usa essas configuracoes para mostrar apenas os horarios em que voce esta disponivel em cada local. Para mais detalhes sobre configuracao de horarios, veja [Configuracao de Agenda](/docs/configuracoes/agenda).
+
+## Resumo
+
+| Configuracao | Onde aparece |
+|--------------|-------------|
+| Nome profissional | Cabecalho dos documentos exportados |
+| Logo | Cabecalho dos documentos exportados |
+| Descricao | Subtitulo nos documentos exportados |
+| Locais de atendimento | Agenda (slots disponiveis) e agendamentos |

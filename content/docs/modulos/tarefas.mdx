@@ -1,0 +1,112 @@
+---
+title: Tarefas
+description: Organize pendencias com calendario e arrastar-e-soltar.
+---
+
+O modulo de Tarefas e o seu gerenciador de pendencias pessoal dentro do DietFlow. Inspirado em apps como OmniFocus, ele combina uma lista de tarefas com um calendario lateral interativo e arrastar-e-soltar para reagendar.
+
+## Visao geral
+
+Tarefas sao itens de to-do que voce cria para organizar seu dia. Podem ou nao ter data, podem ou nao estar vinculadas a um paciente. O diferencial e a integracao com o calendario: voce ve quantas tarefas tem por dia e move entre datas arrastando.
+
+A tela de Tarefas e dividida em:
+
+- **Painel lateral** — filtros inteligentes (Hoje, Atrasado, Programado, Todos) + calendario mensal
+- **Lista de tarefas** — as tarefas em si, com edicao inline
+
+## Criacao com um clique
+
+Ao clicar em **+ Nova Tarefa**, o sistema cria a tarefa imediatamente no banco e abre o campo de titulo para edicao. Nao ha formulario nem popup — a tarefa nasce pronta para ser nomeada.
+
+Se voce tem um dia selecionado no calendario, a tarefa ja recebe essa data. Caso contrario, ela e criada sem data (voce define depois, se quiser).
+
+<Callout type="info" title="Sem data por padrao">
+Tarefas nao recebem data automaticamente ao serem criadas. Voce decide quando — ou se — ela precisa de uma data. Isso evita poluir sua agenda com prazos artificiais.
+</Callout>
+
+## Calendario lateral (MiniCalendar)
+
+O calendario mensal na barra lateral mostra um contador em cada dia, indicando quantas tarefas estao agendadas. Funciona como mapa visual da sua carga de trabalho.
+
+- **Clique em um dia** para filtrar a lista e ver apenas as tarefas daquela data
+- **Navegue entre meses** com as setas no topo do calendario
+- **O dia de hoje** aparece destacado em azul
+
+## Arrastar-e-soltar (mover entre datas)
+
+Voce pode arrastar uma tarefa da lista e soltar sobre qualquer dia do calendario lateral para reagendar. O sistema:
+
+1. Move a tarefa para a nova data instantaneamente
+2. Exibe uma notificacao com opcao de **desfazer**
+3. Atualiza o contador de tarefas nos dias afetados
+
+Tambem e possivel arrastar uma tarefa para o filtro **Todos** para remover a data dela.
+
+<Callout type="warn" title="Arrastar so funciona nas ativas">
+O arrastar-e-soltar so esta disponivel na aba **Ativas**. Tarefas concluidas ou arquivadas nao podem ser arrastadas.
+</Callout>
+
+## Reordenar tarefas
+
+Alem de mover entre datas, voce pode reordenar as tarefas dentro de um mesmo grupo arrastando pela alca (grip) a esquerda. A nova ordem e salva automaticamente.
+
+## Filtros inteligentes
+
+Os filtros no painel lateral agrupam suas tarefas por criterios uteis:
+
+| Filtro | O que mostra |
+|--------|-------------|
+| **Hoje** | Tarefas agendadas para hoje |
+| **Atrasado** | Tarefas com data passada que ainda estao abertas |
+| **Programado** | Todas as tarefas que tem data definida |
+| **Todos** | Todas as tarefas (com e sem data) |
+
+Ao selecionar um filtro, a lista mostra apenas as tarefas correspondentes. Clicar em um dia no calendario ativa o filtro de dia especifico.
+
+## Abas de status
+
+As tarefas sao organizadas em tres abas:
+
+- **Ativas** — tarefas abertas, pendentes
+- **Concluidas** — tarefas marcadas como feitas
+- **Arquivadas** — tarefas removidas (soft delete), podem ser restauradas
+
+## Vincular a paciente
+
+Qualquer tarefa pode ser vinculada a um paciente. Ao expandir uma tarefa, clique no botao de paciente para buscar e selecionar. O nome do paciente aparece na tarefa para referencia rapida.
+
+Tarefas vinculadas a pacientes tambem aparecem na aba de tarefas dentro do perfil do paciente.
+
+## Visualizacao por paciente
+
+Alem da visualizacao por timeline (padrao), voce pode alternar para a visualizacao **por paciente**, que agrupa as tarefas pelo paciente vinculado. Tarefas sem paciente aparecem em um grupo separado.
+
+## Flag (destaque)
+
+Marque tarefas importantes com flag clicando no icone de bandeira. Tarefas com flag recebem destaque visual e podem ser filtradas separadamente.
+
+## Agendamento e recorrencia
+
+No modo expandido, voce pode definir:
+
+- **Data de inicio** — quando a tarefa deve ser feita
+- **Data de fim** — prazo final (opcional)
+- **Recorrencia** — repetir diariamente, semanalmente, mensalmente, etc.
+
+## Acoes em lote
+
+Selecione multiplas tarefas para executar acoes em massa:
+
+- **Concluir** todas as selecionadas
+- **Arquivar** (mover para lixeira)
+- **Restaurar** do arquivo
+- **Marcar/desmarcar flag**
+- **Vincular a paciente**
+
+## Integracao com a Agenda
+
+Tarefas com data aparecem automaticamente no calendario principal da Agenda, lado a lado com consultas e compromissos. Voce pode criar e editar tarefas diretamente pela agenda.
+
+<Callout type="info" title="Tarefas nunca bloqueiam horarios">
+Diferente de consultas e compromissos, tarefas nao bloqueiam faixas horarias na agenda. Elas sao apenas lembretes visuais no dia.
+</Callout>

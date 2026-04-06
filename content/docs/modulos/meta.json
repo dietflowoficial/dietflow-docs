@@ -1,0 +1,16 @@
+{
+  "title": "Modulos",
+  "pages": [
+    "agenda",
+    "anamnese",
+    "antropometria",
+    "gestacao",
+    "exames",
+    "prescricao",
+    "calculo",
+    "dieta",
+    "tarefas",
+    "textos",
+    "forms"
+  ]
+}

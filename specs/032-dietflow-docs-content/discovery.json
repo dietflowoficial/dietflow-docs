@@ -1,0 +1,32 @@
+{
+  "spec_id": "032-dietflow-docs-content",
+  "subtask": "subtask-5",
+  "discovery_sources": [
+    "src/components/clinical/prescricao/README.md",
+    "src/components/clinical/prescricao/PrescricaoMain.tsx",
+    "src/lib/clinical/prescricao/types.ts",
+    "src/lib/clinical/prescricao/constants.ts",
+    "src/components/clinical/prescricao/components/cards/CardFormulacao.tsx",
+    "src/components/clinical/prescricao/components/cards/CardSuplemento.tsx",
+    "src/components/clinical/prescricao/components/cards/CardTexto.tsx",
+    "src/lib/hooks/clinical/usePrescriptionSafety.ts",
+    "src/components/clinical/prescricao/preview/PrescricaoPreview.tsx"
+  ],
+  "key_findings": {
+    "three_item_types": "formulacao (manipulado), suplemento (commercial), texto (free text)",
+    "authoring_modes": "manual (MVP default) and structured (beta only, behind feature flag prescricao_structured_authoring)",
+    "safety_guardrail": "usePrescriptionSafety hook sums doses across all items, compares against UL from catalog. Statuses: safe/warning/danger. Only active when structured authoring is enabled.",
+    "substance_catalog": "Categories: Vitaminas, Minerais, Aminoacidos, Fitoterapicos, Acidos Graxos, Probioticos, Antioxidantes, Adaptogenos, Enzimas",
+    "vias_administracao": "oral, sublingual, topico, injetavel, nasal, retal, ocular, outro",
+    "formas_farmaceuticas": "Capsula, Comprimido, Po, Liquido, Sache, Sublingual, Spray, Gel, Creme",
+    "dnd": "SmartGrid with drag-and-drop reorder",
+    "export": "PDF and HTML via ExportModalUnified",
+    "favorites": "Save as template, import with replace or merge modes",
+    "bulk_add": "ModalAdicionarEmMassa for adding multiple substances at once"
+  },
+  "patterns_followed": [
+    "content/docs/guias/exames.mdx (Steps pattern)",
+    "content/docs/guias/anamnese.mdx (Steps + Callout pattern)",
+    "content/docs/modulos/exames.mdx (full reference with tables and callouts)"
+  ]
+}

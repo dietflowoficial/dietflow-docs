@@ -1,0 +1,29 @@
+{
+  "spec_id": "027-dietflow-docs",
+  "title": "DietFlow Documentation Site",
+  "current_phase": "complete",
+  "phases": {
+    "discovery": "complete",
+    "plan": "complete",
+    "code": "complete",
+    "build": "complete",
+    "deploy": "complete",
+    "qa": "complete"
+  },
+  "code_progress": {
+    "total_subtasks": 8,
+    "completed": 8,
+    "current_subtask": null
+  },
+  "deploy": {
+    "github_repo": "https://github.com/dietflowoficial/dietflow-docs",
+    "vercel_project": "dietflow-docs",
+    "production_url": "https://dietflow-docs.vercel.app",
+    "custom_domain": "docs.dietflow.com.br",
+    "custom_domain_status": "awaiting_dns",
+    "vercel_team": "dietflows-projects"
+  },
+  "qa_verdict": "approved",
+  "qa_iteration": 1,
+  "updated_at": "2026-04-02T18:30:00Z"
+}

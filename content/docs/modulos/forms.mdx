@@ -1,0 +1,129 @@
+---
+title: Formularios
+description: Crie formularios personalizados para coletar informacoes dos seus pacientes.
+---
+
+O modulo de Formularios permite criar questionarios personalizados, enviar para pacientes responderem e acompanhar as respostas com estatisticas e graficos. Ideal para anamneses padronizadas, protocolos clinicos, pesquisas de satisfacao e qualquer coleta de dados estruturada.
+
+## Visao geral
+
+Formularios sao templates reutilizaveis que voce monta uma vez e envia quantas vezes quiser. Cada formulario tem campos configurados por voce (texto, escolha, escala, checklist) e gera um link que o paciente abre no navegador para responder — sem precisar de login.
+
+O editor e dividido em quatro abas:
+
+| Aba | Funcao |
+|-----|--------|
+| **Campos** | Montar o formulario com arrastar-e-soltar |
+| **Preview** | Visualizar como o paciente vai ver |
+| **Configuracoes** | Definir quem pode responder, validade, envio |
+| **Respostas** | Ver quem respondeu, estatisticas e graficos |
+
+## Tipos de campo
+
+Voce monta o formulario combinando cinco tipos de campo, organizados em tres categorias:
+
+### Entrada
+
+| Campo | Descricao |
+|-------|-----------|
+| **Texto** | Campo de texto livre, curto (uma linha) ou longo (varias linhas). Pode ter limite de caracteres |
+
+### Escolha
+
+| Campo | Descricao |
+|-------|-----------|
+| **Escolha unica** | O paciente seleciona uma opcao entre varias. Layout vertical, horizontal ou em cards |
+| **Escolha multipla** | O paciente seleciona uma ou mais opcoes. Pode definir minimo e maximo de selecoes |
+
+### Avaliacao
+
+| Campo | Descricao |
+|-------|-----------|
+| **Escala** | Nota numerica em slider, botoes, estrelas ou emojis. Configuravel de 0 a 10 (ou qualquer faixa) |
+| **Checklist** | Lista de itens que o paciente marca como feitos. Pode exigir que todos sejam marcados |
+
+Todos os campos aceitam:
+
+- **Titulo** — o que aparece acima do campo (ex.: "Como voce avalia sua alimentacao?")
+- **Descricao** — texto complementar abaixo do titulo
+- **Obrigatorio** — se o paciente precisa preencher para enviar
+
+<Callout type="info" title="Opcao Outro">
+Os campos de escolha (unica e multipla) podem incluir a opcao **Outro**, que permite ao paciente digitar uma resposta personalizada quando nenhuma alternativa se aplica.
+</Callout>
+
+## Construindo o formulario
+
+O editor de formularios usa o mesmo sistema de Composer da Anamnese: voce adiciona campos pela paleta lateral e os organiza arrastando.
+
+1. Clique em **Adicionar Campo** para abrir a paleta
+2. Escolha o tipo de campo desejado (ele aparece no final da lista)
+3. Edite o titulo, descricao e opcoes diretamente no card
+4. Arraste os cards pela alca para reorganizar a ordem
+5. Use os botoes de acao no card para duplicar ou remover
+
+Cada campo adicionado aparece como um card editavel. Clique no card para expandir e configurar suas opcoes especificas (alternativas, limites, layout).
+
+## Preview
+
+A aba **Preview** mostra o formulario exatamente como o paciente vai ver ao abrir o link. Use para revisar a experiencia antes de enviar.
+
+## Configuracoes
+
+Na aba **Configuracoes**, voce define como o formulario se comporta:
+
+| Configuracao | O que faz |
+|-------------|-----------|
+| **Escopo** | Quem pode responder: pacientes, usuarios logados, publico (sem login) |
+| **Multiplas respostas** | Se o mesmo paciente pode responder mais de uma vez |
+| **Editar apos envio** | Se o paciente pode alterar respostas ja enviadas |
+| **Respostas anonimas** | Se aceita respostas sem identificacao |
+| **Data de expiracao** | Ate quando o formulario aceita respostas |
+
+### Enviar para paciente
+
+Na mesma aba de configuracoes, voce pode gerar um link de acesso para um paciente especifico:
+
+1. Clique em **Enviar para Paciente**
+2. Busque e selecione o paciente pelo nome ou CPF
+3. O sistema gera um link unico
+4. Copie o link e envie por WhatsApp, email ou qualquer canal
+
+O paciente abre o link no navegador, valida com o CPF e responde o formulario.
+
+<Callout type="info" title="Envio em grupo">
+Voce tambem pode enviar o mesmo formulario para varios pacientes de uma vez, filtrando por tag, localidade ou selecionando todos os pacientes ativos.
+</Callout>
+
+## Respostas
+
+A aba **Respostas** reune tudo que seus pacientes responderam:
+
+- **Estatisticas** — total de respostas, quantas submetidas vs rascunhos
+- **Lista de respondentes** — quem respondeu, quando, status da resposta
+- **Graficos analiticos** — visualizacao das respostas por campo (distribuicao de escolhas, medias de escalas)
+
+Clique em qualquer respondente para ver a resposta completa em modo somente leitura.
+
+## Salvar e organizar
+
+Os formularios ficam acessiveis em **Meus Conteudos → Formularios**. Voce pode:
+
+- Editar o **titulo** clicando nele no topo do editor
+- Adicionar uma **descricao** para facilitar a identificacao
+- Copiar o **link** do formulario para compartilhar
+- **Exportar** o formulario para PDF ou HTML
+
+<Callout type="info" title="Formularios sao independentes">
+Diferente dos outros modulos clinicos, formularios nao estao vinculados a um paciente especifico. Voce cria o formulario uma vez e envia para quantos pacientes quiser.
+</Callout>
+
+## Dicas de uso
+
+<Callout type="info" title="Fluxo recomendado">
+1. **Monte** o formulario na aba Campos
+2. **Revise** na aba Preview
+3. **Configure** escopo e permissoes
+4. **Envie** o link para o paciente
+5. **Acompanhe** as respostas na aba Respostas
+</Callout>

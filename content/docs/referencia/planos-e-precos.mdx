@@ -1,0 +1,81 @@
+---
+title: Planos e Precos
+description: Comparativo entre os planos FREE e PRO do DietFlow.
+---
+
+O DietFlow oferece dois planos: **FREE** (gratuito) e **PRO** (pago). O plano FREE permite que voce conheca e use o sistema com limites de capacidade. O plano PRO remove todos os limites e libera o uso completo.
+
+## Comparativo
+
+| Recurso | FREE | PRO |
+|---------|------|-----|
+| **Pacientes** | Ate 5 | Ilimitados |
+| **Locais de atendimento** | 1 | Ilimitados |
+| **Exportacoes por mes** | 10 | Ilimitadas |
+| **Modulos clinicos** | Todos disponiveis | Todos disponiveis |
+| **Agenda** | Completa | Completa |
+| **Favoritos e templates** | Completos | Completos |
+| **Cadastro de alimentos, substancias e exames** | Completo | Completo |
+| **Formularios para pacientes** | Completos | Completos |
+
+## Precos
+
+O plano PRO pode ser pago mensalmente ou anualmente:
+
+| Ciclo | Valor |
+|-------|-------|
+| **Mensal** | R$ 99,90/mes |
+| **Anual** | R$ 999,00/ano (economia de ~17%) |
+
+O pagamento e processado via Stripe, com cartao de credito. Voce pode mudar o ciclo de cobranca ou cancelar a qualquer momento.
+
+## O que acontece ao ultrapassar os limites
+
+Se voce esta no plano FREE e atinge o limite de 5 pacientes, voce ainda consegue visualizar e exportar os dados dos pacientes existentes, mas nao pode criar novos. O mesmo vale para exportacoes: ao atingir 10 no mes, o sistema bloqueia novas exportacoes ate o proximo ciclo.
+
+O sistema mostra avisos claros antes de voce atingir os limites, com opcao de fazer upgrade diretamente.
+
+## Upgrade e downgrade
+
+### Fazer upgrade
+
+1. Acesse **Configuracoes → Pagamentos**
+2. Clique em **Fazer Upgrade**
+3. Escolha entre mensal ou anual
+4. Complete o pagamento via Stripe
+
+O acesso PRO e liberado imediatamente apos a confirmacao do pagamento.
+
+### Cancelar assinatura
+
+1. Acesse **Configuracoes → Pagamentos**
+2. Clique em **Cancelar Assinatura**
+3. Confirme o cancelamento
+
+Ao cancelar, voce mantem o acesso PRO ate o final do periodo ja pago. Depois disso, a conta volta para o plano FREE com os limites padrao.
+
+<Callout type="warn" title="Dados nao sao apagados">
+Ao voltar para o plano FREE, nenhum dado e apagado — seus pacientes, registros, favoritos e configuracoes permanecem intactos. Voce so perde a capacidade de criar novos pacientes acima do limite e de exportar alem da cota mensal.
+</Callout>
+
+## Modos de acesso
+
+Dependendo do status da sua assinatura, o sistema aplica diferentes niveis de acesso:
+
+| Modo | O que voce pode fazer | Quando acontece |
+|------|----------------------|-----------------|
+| **Acesso completo** | Tudo: criar, editar, exportar | Plano ativo (FREE dentro dos limites ou PRO) |
+| **Somente visualizacao** | Ver e exportar dados, sem criar ou editar | Grace period apos falha de pagamento, ou quota excedida |
+| **Bloqueado** | Redirecionado para a pagina de upgrade | Assinatura expirada apos o grace period |
+
+## Beta testers
+
+Usuarios que participam do programa de beta testing tem acesso PRO completo sem custos, sem banners de limite e sem avisos de quota. Se voce faz parte do programa, sua conta ja esta configurada automaticamente.
+
+## Formas de concessao
+
+Alem da assinatura Stripe, o acesso PRO pode ser concedido de outras formas:
+
+- **Assinatura Stripe** — fluxo padrao de pagamento
+- **Concessao administrativa** — acesso PRO concedido manualmente pela equipe DietFlow (ex: parceiros, demonstracoes)
+- **Beta Grant** — acesso para participantes do programa de testes

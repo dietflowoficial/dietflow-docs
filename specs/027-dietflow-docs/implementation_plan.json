@@ -1,0 +1,72 @@
+{
+  "spec_id": "027-dietflow-docs",
+  "title": "DietFlow Documentation Site",
+  "phases": [
+    {
+      "id": "phase-1-scaffold",
+      "name": "Project Scaffold",
+      "subtasks": [
+        {
+          "id": "subtask-1-1",
+          "title": "Create Fumadocs Next.js project",
+          "status": "complete"
+        },
+        {
+          "id": "subtask-1-2",
+          "title": "Create GitHub repo and push initial scaffold",
+          "status": "complete"
+        }
+      ]
+    },
+    {
+      "id": "phase-2-branding",
+      "name": "Branding & Theme",
+      "subtasks": [
+        {
+          "id": "subtask-2-1",
+          "title": "DietFlow branding: colors, fonts, logo, favicon",
+          "status": "complete"
+        },
+        {
+          "id": "subtask-2-2",
+          "title": "Custom landing page with hero and feature cards",
+          "status": "complete"
+        }
+      ]
+    },
+    {
+      "id": "phase-3-content",
+      "name": "Content & SEO",
+      "subtasks": [
+        {
+          "id": "subtask-3-1",
+          "title": "MDX content pages (Comecando, Guias, Referencia)",
+          "status": "complete"
+        },
+        {
+          "id": "subtask-3-2",
+          "title": "SEO: sitemap, robots.txt, Open Graph metadata",
+          "status": "complete"
+        }
+      ]
+    },
+    {
+      "id": "phase-4-deploy",
+      "name": "Deploy",
+      "subtasks": [
+        {
+          "id": "subtask-4-1",
+          "title": "Commit, push to GitHub, create Vercel project and deploy",
+          "status": "complete"
+        },
+        {
+          "id": "subtask-4-2",
+          "title": "Configure custom domain docs.dietflow.com.br on Vercel project",
+          "status": "complete"
+        }
+      ]
+    }
+  ],
+  "created_at": "2026-04-02T00:00:00Z",
+  "updated_at": "2026-04-02T12:00:00Z"
+}

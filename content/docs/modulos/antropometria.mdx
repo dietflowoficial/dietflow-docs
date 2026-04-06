@@ -1,0 +1,142 @@
+---
+title: Antropometria
+description: Medidas corporais e composicao corporal.
+---
+
+O modulo de Antropometria e onde voce registra as medidas corporais do paciente e acompanha a evolucao da composicao corporal ao longo do tempo. O DietFlow calcula automaticamente indices, protocolos de dobras cutaneas, circunferencias e bioimpedancia — tudo em tempo real, enquanto voce digita.
+
+## Como funciona
+
+Cada avaliacao antropometrica e um registro independente vinculado ao paciente. Voce informa as medidas brutas (peso, altura, dobras, circunferencias) e o sistema calcula todos os resultados automaticamente, incluindo composicao corporal por multiplos protocolos simultaneamente.
+
+Para o passo a passo de como registrar uma avaliacao, veja o [guia de antropometria](/docs/guias/antropometria).
+
+## Medidas disponiveis
+
+A avaliacao antropometrica e organizada em abas:
+
+### Dobras cutaneas
+
+Medidas obtidas com adipometro. O DietFlow suporta 10 pontos de medicao:
+
+| Dobra | Local de medicao |
+|-------|-----------------|
+| Tricipital | Regiao posterior do braco |
+| Bicipital | Regiao anterior do braco |
+| Subescapular | Abaixo da escapula (obliqua) |
+| Axilar media | Linha axilar media (obliqua) |
+| Toracica | Entre a linha axilar anterior e o mamilo |
+| Suprailíaca | Acima da crista ilíaca (obliqua) |
+| Abdominal | 2 cm a direita da cicatriz umbilical |
+| Coxa | Regiao anterior da coxa |
+| Panturrilha | Regiao medial da perna |
+| Supraespinhal | Regiao supraespinhal (obliqua) |
+
+<Callout type="info" title="Preencha apenas o que voce mediu">
+Nao e necessario preencher todas as dobras. O sistema identifica automaticamente quais protocolos podem ser calculados com as medidas disponiveis e ignora os demais.
+</Callout>
+
+### Circunferencias
+
+Medidas de perimetros corporais com fita metrica:
+
+- **Braco** — direito, esquerdo, relaxado, contraido
+- **Antebraco** — direito e esquerdo
+- **Punho** — direito e esquerdo
+- **Torax, cintura, abdomen, quadril**
+- **Coxa** — direita, esquerda, proximal, medial, distal
+- **Panturrilha** — direita e esquerda
+- **Pescoco e ombro**
+
+### Bioimpedancia
+
+Se voce utiliza balanca de bioimpedancia ou equipamento especifico, pode registrar os valores diretamente:
+
+- Percentual de gordura
+- Massa gorda e massa magra
+- Agua corporal
+- Metabolismo basal
+- Idade corporal
+- Gordura visceral
+- Massa livre de gordura
+- Peso osseo
+
+<Callout type="info" title="Bioimpedancia como medicao direta">
+A bioimpedancia e tratada como medicao direta — o sistema registra os valores informados sem recalcular. Isso permite manter a precisao do equipamento utilizado.
+</Callout>
+
+### Diametros osseos
+
+Medidas de diametros osseos para calculo de estrutura corporal:
+
+- Umero, punho e femur
+
+## Protocolos de composicao corporal
+
+O DietFlow aplica automaticamente todos os protocolos compativeis com as medidas informadas. Os protocolos sao divididos em categorias:
+
+### Protocolos de dobras cutaneas
+
+| Protocolo | Dobras necessarias | Indicacao |
+|-----------|-------------------|-----------|
+| Pollock 3 Dobras | 3 dobras (variam por sexo) | Padrao ouro para adultos — mais usado no Brasil |
+| Pollock 7 Dobras | 7 dobras (variam por sexo) | Maxima precisao para adultos e atletas |
+| Petroski | 7 dobras (variam por sexo) | Desenvolvido para populacao brasileira |
+| Durnin & Womersley | 4 dobras | Ampla faixa etaria (16-72 anos) |
+| Guedes | 3 dobras | Pratico e rapido |
+| Lohman | 2 dobras | Populacao pediatrica (7-17 anos) |
+| Slaughter | 2 dobras | Populacao pediatrica (8-17 anos) |
+
+<Callout type="info" title="Selecao inteligente de protocolo">
+O sistema analisa as medidas disponiveis, o perfil do paciente (sexo, idade, IMC) e destaca automaticamente o protocolo mais adequado. Voce tambem pode escolher manualmente qual protocolo usar como resultado oficial.
+</Callout>
+
+### Protocolos de circunferencias
+
+O DietFlow calcula tambem a composicao corporal a partir de circunferencias, usando protocolos como Marinha e YMCA.
+
+### Estrutura corporal
+
+Com o diametro do punho e a altura, o sistema classifica a estrutura corporal do paciente em **pequena**, **media** ou **grande**.
+
+## Resultados automaticos
+
+O painel de resultados exibe em tempo real:
+
+| Indicador | O que mostra |
+|-----------|-------------|
+| **IMC** | Indice de massa corporal com classificacao (baixo peso, eutrofico, sobrepeso, obesidade) |
+| **Peso ideal** | Faixa de peso recomendada baseada na altura |
+| **RCQ** | Relacao cintura-quadril com classificacao de risco cardiovascular |
+| **RCA** | Relacao cintura-altura com classificacao de risco |
+| **Composicao corporal** | Percentual de gordura, massa gorda e massa magra por protocolo |
+
+Cada indicador tem um icone de informacao que explica a formula utilizada, as referencias cientificas e como interpretar o resultado.
+
+### Modos de selecao
+
+Voce pode escolher como o sistema define o resultado oficial de composicao corporal:
+
+- **Inteligente** — o sistema escolhe o protocolo mais adequado com base no perfil do paciente
+- **Manual** — voce escolhe qual protocolo usar como oficial
+
+## Graficos de evolucao
+
+Na listagem de avaliacoes do paciente, a aba **Evolucao** permite comparar registros ao longo do tempo com graficos interativos:
+
+- **Curvas de crescimento** — evolucao de peso e IMC em curvas de referencia
+- **Composicao corporal** — percentual de gordura e massa magra ao longo do tempo
+- **Variacao entre avaliacoes** — ganho ou perda de peso, gordura e massa magra entre registros
+- **Historico completo** — tabela com todos os registros e valores calculados
+
+Os graficos permitem filtrar por periodo e selecionar quais registros comparar, facilitando a visualizacao de tendencias e a tomada de decisao clinica.
+
+## Importacao para o Calculo Nutricional
+
+O peso e a altura registrados na antropometria podem ser importados automaticamente pelo modulo de **Calculo Nutricional**. Isso alimenta o pipeline clinico: Antropometria fornece os dados basicos que o Calculo usa para estimar TMB, GET e VET.
+
+Veja mais em [Pipeline Clinico](/docs/referencia/pipeline-clinico) e [Calculo Nutricional](/docs/modulos/calculo).
+
+## Exportacao
+
+Voce pode exportar a avaliacao antropometrica em PDF ou HTML para incluir em laudos, relatorios ou compartilhar com o paciente.

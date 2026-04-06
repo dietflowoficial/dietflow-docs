@@ -1,0 +1,197 @@
+---
+title: Agenda
+description: Organize sua rotina com a agenda inteligente do DietFlow.
+---
+
+A Agenda e o coracao do DietFlow. E onde voce organiza todo o seu dia de trabalho: consultas, compromissos pessoais, bloqueios de horario e tarefas pendentes — tudo em um unico calendario visual. O sistema detecta automaticamente o tipo de evento com base no seu clique, calcula horarios disponiveis e avisa sobre conflitos antes de voce confirmar.
+
+## Os 5 tipos de eventos
+
+A Agenda trabalha com 5 tipos de eventos para cobrir toda a sua rotina profissional e pessoal:
+
+| Tipo | O que e | Tem paciente? | Bloqueia horario? |
+|------|---------|---------------|-------------------|
+| **Atendimento** | Consulta com paciente (inicial ou retorno) | Sim (obrigatorio) | Sim |
+| **Tarefa** | Pendencia ou to-do, com ou sem paciente | Opcional | Nao |
+| **Compromisso** | Evento pessoal sem paciente (reuniao, curso) | Nao | Nao |
+| **Bloqueio** | Bloqueia uma faixa horaria (ferias, almoco) | Nao | Sim (absoluto) |
+| **Evento** | Expande disponibilidade em dias extras | Nao | Nao |
+
+<Callout type="info" title="Quando usar cada tipo?">
+Pense assim: tem paciente? E um **atendimento**. Precisa lembrar de fazer algo? E uma **tarefa**. Ocupa tempo no seu dia mas nao e consulta? E um **compromisso**. Quer bloquear um horario para ninguem agendar? E um **bloqueio**. Vai atender num dia que normalmente nao trabalha? E um **evento** de disponibilidade.
+</Callout>
+
+## As visualizacoes do calendario
+
+A Agenda oferece 6 formas de ver sua rotina. Voce pode alternar entre elas a qualquer momento pela barra superior:
+
+| Visualizacao | O que mostra |
+|--------------|-------------|
+| **Mes** | Visao geral do mes inteiro. Clique em um dia para navegar ate ele |
+| **Semana** | Grade com horarios, ideal para o dia a dia |
+| **Dia** | Foco em um unico dia com todos os detalhes |
+| **Lista** | Todos os eventos em formato de lista por data |
+| **Planejamento** | Classificacao dos seus pacientes por engajamento (Fluxo, Ativo, Inativo, Novo) |
+| **Avisos** | Painel de alertas: consultas sem desfecho, pagamentos pendentes, tarefas atrasadas |
+
+A visualizacao **Semana** e a mais usada no dia a dia. A grade mostra apenas os horarios em que voce trabalha — o sistema ajusta automaticamente com base na sua configuracao de disponibilidade.
+
+## Como criar eventos
+
+### Clique ou arraste no calendario
+
+A forma mais rapida de criar um evento e interagir diretamente com o calendario:
+
+- **Clique em um horario vazio** na grade de semana ou dia — o sistema abre o painel de agendamento assumindo que voce quer criar um **atendimento**
+- **Arraste um bloco de tempo** (por exemplo, das 10h as 11h30) — o sistema usa o horario exato que voce arrastou
+- **Arraste um bloco maior que 4 horas** — o sistema sugere **compromisso** em vez de atendimento (voce pode trocar)
+- **Clique em "dia inteiro"** na parte superior — o sistema sugere **tarefa**
+
+Voce sempre pode trocar o tipo no menu suspenso dentro do painel.
+
+### Botao "Novo" na barra de ferramentas
+
+Use o botao **Novo** quando quiser criar um evento sem contexto de horario. O sistema sugere o proximo horario disponivel automaticamente.
+
+<Callout type="info" title="Deteccao inteligente de tipo">
+O DietFlow analisa o contexto do seu clique para sugerir o tipo mais provavel. Clique curto em horario = atendimento. Arraste longo = compromisso. Selecao de dia inteiro = tarefa. Voce nunca precisa configurar nada — e so comecar a usar.
+</Callout>
+
+## O painel lateral (drawer)
+
+Ao clicar em um horario ou evento, um painel lateral abre no lado direito da tela. Esse painel serve para **criar** e **editar** todos os 5 tipos de evento.
+
+### Campos por tipo
+
+Cada tipo mostra campos relevantes:
+
+- **Atendimento**: paciente (obrigatorio), data e horario, plano de atendimento, tipo (inicial/retorno), modalidade, valor, status de pagamento e notas
+- **Tarefa**: titulo, data (opcional), paciente (opcional), status e notas
+- **Compromisso**: titulo, data e horario, e notas
+- **Bloqueio**: titulo, data e horario, e notas
+- **Evento**: titulo, datas (sempre dia inteiro), e notas
+
+### Telas dentro do painel
+
+Alem do formulario principal, o painel de atendimento oferece telas adicionais acessiveis pelos icones no cabecalho:
+
+- **Historico**: linha do tempo de todas as consultas do paciente selecionado
+- **Tarefas**: lista de tarefas abertas vinculadas ao paciente
+- **Avisos**: alertas do paciente (consulta sem desfecho, pagamento pendente)
+
+## Status de atendimento
+
+Cada consulta passa por um ciclo de vida com 5 status possiveis:
+
+| Status | Significado | Cor no calendario |
+|--------|------------|-------------------|
+| **Agendada** | Consulta marcada, aguardando confirmacao | Laranja |
+| **Confirmada** | Paciente confirmou presenca | Verde |
+| **Concluida** | Atendimento realizado | Azul |
+| **Faltou** | Paciente nao compareceu | Vermelho tracejado |
+| **Cancelada** | Consulta cancelada | Vermelho riscado |
+
+### Transicoes de status
+
+O fluxo normal e: **Agendada** → **Confirmada** → **Concluida**. Mas voce pode:
+
+- Marcar como **Faltou** se o paciente nao compareceu
+- **Cancelar** a qualquer momento
+- **Reagendar** uma consulta com status Faltou (abre o seletor de novo horario)
+- **Reabrir** uma consulta cancelada (volta para Agendada)
+- **Iniciar** um atendimento diretamente, o que marca como Concluida e registra o horario real de inicio
+
+<Callout type="info" title="Mudanca de status no historico">
+Voce pode alterar o status de uma consulta diretamente pelo card no historico, sem precisar abrir o formulario completo. Isso agiliza o fechamento do dia.
+</Callout>
+
+## Arrastar e soltar
+
+A Agenda suporta arrastar e soltar para reorganizar sua agenda rapidamente:
+
+- **Mover atendimento**: arraste para outro horario ou dia. O sistema atualiza automaticamente
+- **Redimensionar**: arraste a borda inferior de um evento para alterar a duracao (minimo de 15 minutos)
+- **Desfazer**: apos mover ou redimensionar, uma notificacao aparece com a opcao de **Desfazer** por alguns segundos
+- **Eventos recorrentes**: ao mover um evento que se repete, o sistema pergunta se voce quer alterar **apenas este** ou **toda a serie**
+
+<Callout type="warn" title="Zonas protegidas">
+Voce nao consegue mover ou criar eventos sobre horarios bloqueados (marcados como indisponivel). Para todos os outros horarios — incluindo fora do expediente e intervalos — o sistema permite a acao e mostra um aviso antes de confirmar.
+</Callout>
+
+## Avisos inteligentes
+
+Quando voce agenda, move ou redimensiona um atendimento em horario com potencial problema, o DietFlow mostra um unico painel de aviso com todas as situacoes detectadas:
+
+- **Fora do expediente**: o horario esta fora da sua disponibilidade configurada
+- **Conflito com outro atendimento**: ja existe outra consulta no mesmo horario (mostra nome do paciente, horario e status)
+- **Intervalo**: o horario cruza seu horario de pausa (almoco, por exemplo)
+
+O aviso mostra todas as situacoes de uma vez. Voce pode confirmar com **"Agendar mesmo assim"** ou cancelar. Nao existe limite de consultas no mesmo horario — o calendario renderiza eventos sobrepostos lado a lado.
+
+## Disponibilidade e motor de horarios
+
+O calendario mostra visualmente quais horarios estao disponiveis, ocupados ou bloqueados:
+
+| Zona | Visual | Significado |
+|------|--------|-------------|
+| Fundo limpo | Livre | Horario de trabalho sem eventos |
+| Hachurado diagonal | Intervalo | Pausa configurada (almoco, por exemplo) |
+| Fundo escuro | Fora do expediente | Fora do seu horario de trabalho |
+| Listras vermelhas | Bloqueado | Indisponivel — ninguem pode agendar |
+
+A disponibilidade e calculada automaticamente com base em:
+
+1. Seus **horarios de trabalho** configurados em [Configuracao de Agenda](/docs/configuracoes/agenda)
+2. **Eventos de disponibilidade** que expandem seus horarios para dias extras
+3. **Bloqueios** que removem disponibilidade em faixas especificas
+4. **Consultas existentes** que ocupam horarios (com aviso, nao bloqueio)
+
+<Callout type="info" title="Disponibilidade extra">
+Precisa atender em um sabado que normalmente nao trabalha? Crie um **Evento** do tipo "Expande agenda" naquele dia. O sistema vai abrir os horarios com base na sua configuracao padrao.
+</Callout>
+
+## Agendamento de consultas
+
+Ao agendar uma consulta, voce pode usar o seletor de horarios que mostra slots de 15 ou 30 minutos (conforme sua configuracao). O seletor usa cores para indicar a situacao de cada horario:
+
+- **Neutro**: horario livre
+- **Verde**: horario selecionado
+- **Amarelo**: horario em intervalo ou fora do expediente (clicavel, com aviso)
+- **Vermelho claro**: ja tem atendimento (clicavel, com aviso de sobreposicao)
+- **Escuro/desabilitado**: bloqueio absoluto (unico nao clicavel)
+
+Voce pode expandir a visualizacao para ver horarios fora do expediente ou ate as 24 horas completas do dia, caso precise agendar em horario nao convencional.
+
+Para o passo a passo detalhado de como agendar uma consulta, veja o guia [Como criar uma consulta na agenda](/docs/guias/criar-consulta).
+
+## Planos de atendimento
+
+Cada consulta pode ser vinculada a um **plano de atendimento**, que define:
+
+- Tipo de consulta (inicial, retorno, avaliacao, etc.)
+- Duracao padrao
+- Valor cobrado
+- Modalidade (presencial, online ou hibrido)
+
+Voce configura seus planos em [Planos de Atendimento](/docs/configuracoes/planos-atendimento). Ao agendar, basta selecionar o plano e os campos de valor e duracao sao preenchidos automaticamente.
+
+## Recorrencia
+
+Compromissos, bloqueios, eventos e tarefas suportam **recorrencia** — voce configura uma vez e o sistema repete automaticamente. Opcoes incluem:
+
+- Diariamente, semanalmente, mensalmente
+- Dias especificos da semana
+- Data de termino ou numero de repeticoes
+
+Ao editar ou mover uma ocorrencia de um evento recorrente, o sistema pergunta se voce quer alterar **apenas esta ocorrencia** ou **toda a serie**.
+
+## Configuracao
+
+A Agenda funciona de fabrica com horarios padrao (segunda a sexta, das 8h as 18h), mas voce pode personalizar tudo:
+
+- **Horarios de trabalho** por dia da semana
+- **Intervalos** (almoco, pausas)
+- **Duracao padrao** das consultas
+- **Granularidade** dos slots (15 ou 30 minutos)
+
+Acesse as configuracoes em [Configuracao de Agenda](/docs/configuracoes/agenda).

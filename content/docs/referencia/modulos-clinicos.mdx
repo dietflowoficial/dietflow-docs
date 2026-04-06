@@ -3,50 +3,66 @@ title: Modulos clinicos
 description: Todos os modulos do DietFlow e como se conectam.
 ---
 
-O DietFlow organiza o trabalho clinico em modulos independentes que se comunicam automaticamente. Cada modulo cobre uma etapa do atendimento nutricional.
+O DietFlow organiza o trabalho clinico em modulos independentes que se comunicam automaticamente. Cada modulo cobre uma etapa do atendimento nutricional — da anamnese ao plano alimentar.
 
-## Anamnese
+Os tres modulos centrais formam o [Pipeline Clinico](/docs/referencia/pipeline-clinico): Antropometria alimenta o Calculo, que alimenta a Dieta. Os demais modulos funcionam de forma independente, mas todos compartilham o mesmo sistema de [favoritos e templates](/docs/referencia/favoritos-templates) e [exportacao](/docs/referencia/exportacao).
 
-Registro completo do historico clinico. Editor com blocos arrastaveis (drag-and-drop) para montar o formulario ideal para cada tipo de paciente. Voce cria seus proprios modelos e reutiliza entre pacientes.
+## Modulos do pipeline
 
-## Antropometria
+<Cards>
+<Card title="Antropometria" href="/docs/modulos/antropometria">
+Medidas corporais, dobras cutaneas, circunferencias, composicao corporal e graficos de evolucao. Ponto de partida do pipeline clinico.
+</Card>
+<Card title="Calculo Nutricional" href="/docs/modulos/calculo">
+TMB, GET e VET com 11 formulas. Treinos por MET, cenarios treino/descanso e ajuste de metas. Importa dados da Antropometria.
+</Card>
+<Card title="Plano Alimentar (Dieta)" href="/docs/modulos/dieta">
+Refeicoes com alimentos de 5 bancos (13k+ itens), distribuicao de macros e cenarios independentes. Importa metas do Calculo.
+</Card>
+</Cards>
 
-Medidas corporais — peso, altura, dobras cutaneas, circunferencias. Calcula composicao corporal automaticamente e gera graficos de evolucao ao longo do tempo.
+## Modulos de registro clinico
 
-## Exames
+<Cards>
+<Card title="Anamnese" href="/docs/modulos/anamnese">
+Editor com blocos arrastaveis para montar o formulario ideal. Widgets de sono, Bristol, rotina alimentar e mais.
+</Card>
+<Card title="Exames" href="/docs/modulos/exames">
+Prescricao e resultados laboratoriais. Packs de exames, evolucao longitudinal e graficos comparativos.
+</Card>
+<Card title="Prescricao" href="/docs/modulos/prescricao">
+Suplementos, formulacoes manipuladas e texto livre. Guardrail de seguranca com alerta de Upper Limit.
+</Card>
+<Card title="Gestacao" href="/docs/modulos/gestacao">
+Acompanhamento gestacional com curvas de ganho de peso por trimestre e grafico de 5 camadas.
+</Card>
+</Cards>
 
-Prescricao e registro de resultados laboratoriais. Acompanhe a evolucao longitudinal dos marcadores com graficos comparativos entre avaliacoes.
+## Ferramentas complementares
 
-## Prescricao
+<Cards>
+<Card title="Tarefas" href="/docs/modulos/tarefas">
+Pendencias e lembretes com ou sem paciente vinculado. Calendario lateral e arrastar-para-agendar.
+</Card>
+<Card title="Textos" href="/docs/modulos/textos">
+Editor de texto rico para laudos, orientacoes, encaminhamentos e observacoes internas.
+</Card>
+<Card title="Formularios" href="/docs/modulos/forms">
+Questionarios personalizados para enviar ao paciente. Respostas ficam disponiveis direto no sistema.
+</Card>
+<Card title="Agenda" href="/docs/modulos/agenda">
+Calendario completo com 6 visualizacoes, 5 tipos de eventos, motor de disponibilidade e confirmacao de consultas.
+</Card>
+</Cards>
 
-Suplementos, manipulados e texto livre. O sistema conta com um guardrail de seguranca: se a soma das moleculas de todas as formulacoes ultrapassar o Upper Limit (UL), voce recebe um alerta antes de salvar.
+## Como os modulos se conectam
 
-## Calculo Nutricional
+Os modulos do pipeline se alimentam automaticamente — voce registra as medidas, o sistema calcula e distribui:
 
-Calculo de TMB (Taxa Metabolica Basal), GET (Gasto Energetico Total) e VET (Valor Energetico Total). Importa dados da Antropometria automaticamente. Suporta cenarios de treino vs descanso para ajustar as metas conforme a rotina do paciente.
+```
+Antropometria → Calculo Nutricional → Plano Alimentar
+```
 
-## Dieta
+Quando o peso do paciente muda, basta criar um novo calculo importando os dados atualizados. O sistema recalcula TMB, GET e VET automaticamente, e as novas metas podem ser importadas no plano alimentar. Veja o fluxo completo em [Pipeline Clinico](/docs/referencia/pipeline-clinico).
 
-Plano alimentar completo com refeicoes e alimentos. Importa as metas calculadas no modulo de Calculo para distribuir macronutrientes entre as refeicoes do dia.
-
-## Tarefas
-
-Pendencias e lembretes vinculados a um paciente ou globais. Arraste tarefas para uma data no calendario para organizar seu fluxo de trabalho.
-
-## Textos
-
-Editor de texto rico para laudos, orientacoes e documentos personalizados. Quatro subtipos disponiveis para cobrir diferentes necessidades de comunicacao com o paciente.
-
----
-
-## Pipeline clinico
-
-Os modulos se alimentam automaticamente — voce registra as medidas, o sistema calcula e distribui.
-
-**Antropometria** → **Calculo** → **Dieta**
-
-1. Registre as medidas corporais na **Antropometria**
-2. O **Calculo Nutricional** importa esses dados e calcula TMB, GET e VET
-3. O **Plano Alimentar (Dieta)** importa as metas do Calculo para distribuir macros entre refeicoes
-
-Se o peso do paciente mudar, o sistema recalcula o VET mantendo o objetivo nutricional. Se o paciente treina, o sistema cria cenarios automaticos para dias de treino e descanso.
+Todos os modulos que geram registros clinicos suportam [exportacao](/docs/referencia/exportacao) em HTML interativo, PDF e texto. E todos (exceto Calculo) permitem salvar como [favorito](/docs/referencia/favoritos-templates) para reutilizar entre pacientes.

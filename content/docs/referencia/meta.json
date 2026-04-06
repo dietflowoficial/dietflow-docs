@@ -2,6 +2,10 @@
   "title": "Referencia",
   "pages": [
     "modulos-clinicos",
-    "atalhos"
+    "atalhos",
+    "pipeline-clinico",
+    "favoritos-templates",
+    "exportacao",
+    "planos-e-precos"
   ]
 }

@@ -1,0 +1,102 @@
+---
+title: Gestacao
+description: Antropometria gestacional e curvas de acompanhamento.
+---
+
+O modulo de Gestacao e uma extensao especializada da antropometria para acompanhamento nutricional de gestantes. Ele calcula projecoes de ganho de peso, classifica o estado nutricional por semana gestacional e projeta o aporte calorico adequado — tudo baseado nas referencias do IOM (Institute of Medicine) e curvas de Atalah.
+
+## Como funciona
+
+O acompanhamento gestacional e dividido em 5 blocos que guiam voce do cadastro inicial ate a projecao de aporte calorico:
+
+1. **Dados pre-gestacionais** — peso antes da gestacao, altura, DUM, tipo de gestacao
+2. **Avaliacao atual** — medidas da consulta corrente com resultados em tempo real
+3. **Evolucao do ganho de peso** — grafico e tabela de acompanhamento semanal
+4. **Panorama gestacional** — resumo por trimestre com metas de ganho
+5. **Calculadora de aporte** — projecao de calorias ate a proxima consulta
+
+## Dados pre-gestacionais
+
+Antes de iniciar o acompanhamento, voce informa:
+
+- **Peso pre-gestacional** (kg) — peso antes da gestacao
+- **Altura** (cm) — pode ser importada de uma avaliacao antropometrica existente
+- **DUM** (data da ultima menstruacao) — usada para calcular a semana gestacional
+- **Tipo de gestacao** — unica ou gemelar
+
+Com esses dados, o sistema calcula o **IMC pre-gestacional** e classifica a gestante (baixo peso, eutrofica, sobrepeso ou obesidade). Essa classificacao define as faixas de ganho de peso recomendadas pelo IOM.
+
+<Callout type="info" title="Semana gestacional automatica">
+A semana gestacional e calculada automaticamente a partir da DUM. Voce tambem pode informar a semana diretamente, e o sistema calcula a DUM correspondente.
+</Callout>
+
+## Avaliacao por consulta
+
+A cada consulta, voce registra:
+
+- **Peso atual** (obrigatorio) — peso da gestante na consulta
+- **Dobra tricipital** (opcional) — para calculo de CMB
+- **Circunferencia braquial** (opcional) — para calculo de CMB
+
+O sistema calcula automaticamente:
+
+| Resultado | O que mostra |
+|-----------|-------------|
+| **Peso esperado** | Peso recomendado para a semana gestacional, com classificacao (adequado, acima ou abaixo) |
+| **Projecao proxima semana** | Estimativa de peso para a semana seguinte com base no ritmo atual |
+| **Aporte calorico** | Calorias adicionais recomendadas por dia, baseadas no trimestre |
+| **CMB** | Circunferencia muscular do braco com classificacao nutricional |
+
+<Callout type="info" title="Selecione a semana">
+Voce pode navegar entre as semanas gestacionais (1 a 42) para registrar medidas ou consultar dados anteriores. Semanas com registro sao sinalizadas para facil identificacao.
+</Callout>
+
+## Grafico de evolucao
+
+O grafico de evolucao mostra a trajetoria de ganho de peso ao longo das 42 semanas, com varias camadas de informacao:
+
+- **Faixas de Atalah** — classificacao nutricional por IMC gestacional (baixo peso, adequado, sobrepeso, obesidade), baseada na referencia de Atalah et al. (1997)
+- **Projecao inicial (IOM)** — trajetoria projetada a partir do IMC pre-gestacional usando as taxas do Institute of Medicine (2009)
+- **Projecao recalculada** — apos o 1o trimestre (semana 13), o sistema recalcula a trajetoria a partir do peso real medido
+- **Projecao dinamica** — linha tracejada que projeta o futuro a partir do ultimo registro, mostrando para onde a gestante esta caminhando
+- **Registros** — pontos com o peso real medido em cada consulta
+
+O grafico permite alternar entre visao focada na paciente e visao clinica completa, alem de filtrar por trimestre e fazer zoom arrastando uma regiao.
+
+<Callout type="warn" title="Previsao temporaria vs oficial">
+Ate o fim do 1o trimestre, a projecao e temporaria (baseada apenas no peso pre-gestacional). Apos a semana 13 com registro de peso, o sistema recalcula com dados reais e a projecao passa a ser oficial.
+</Callout>
+
+## Tabela de acompanhamento
+
+A tabela complementa o grafico com dados detalhados semana a semana: peso registrado, peso esperado, ganho acumulado, classificacao e status de adequacao. Permite uma visao estruturada do historico completo.
+
+## Panorama por trimestre
+
+O panorama mostra um resumo de cada trimestre com:
+
+- Ganho de peso recomendado para o periodo
+- Peso no inicio e fim do trimestre (real ou projetado)
+- Progresso visual do trimestre
+- Indicacao de trimestre atual, concluido ou pendente
+
+## Calculadora de aporte energetico
+
+A calculadora projeta o aporte calorico diario ate a proxima consulta:
+
+- Selecione a semana da proxima consulta ou informe uma data
+- Ajuste o ritmo de ganho desejado (kg/semana)
+- O sistema calcula quantas calorias adicionais por dia sao necessarias para atingir a meta
+
+O calculo considera o trimestre atual e as recomendacoes do IOM para o perfil nutricional da gestante.
+
+## Importacao de dados
+
+Voce pode importar a altura de uma avaliacao antropometrica anterior do mesmo paciente, evitando redigitacao. Basta clicar em **Importar** no bloco de dados pre-gestacionais.
+
+## Referencias cientificas
+
+O modulo utiliza as seguintes referencias:
+
+- **Atalah E et al. (1997)** — curvas de classificacao nutricional da gestante por IMC e semana gestacional
+- **IOM/Institute of Medicine (2009)** — recomendacoes de ganho de peso durante a gestacao por classificacao de IMC pre-gestacional

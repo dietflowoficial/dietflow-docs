@@ -1,0 +1,153 @@
+---
+title: Calculo Nutricional
+description: TMB, GET e VET com cenarios de treino.
+---
+
+O modulo de Calculo Nutricional e onde voce transforma os dados corporais do paciente em metas energeticas. O DietFlow importa automaticamente peso, altura, idade e sexo da Antropometria, calcula a Taxa Metabolica Basal (TMB), o Gasto Energetico Total (GET) e o Valor Energetico Total (VET) — e disponibiliza esses resultados para o plano alimentar.
+
+Para o passo a passo de como criar um calculo, veja o [guia de calculo nutricional](/docs/guias/calculo-nutricional).
+
+## Como funciona
+
+Cada calculo nutricional e um registro independente vinculado ao paciente. Voce escolhe a formula de TMB, define o nivel de atividade fisica e cadastra os treinos do paciente. O sistema calcula tudo automaticamente em tempo real — sem botoes de "calcular". Basta alterar um dado e os resultados se atualizam instantaneamente.
+
+O calculo segue uma sequencia logica:
+
+1. **TMB** — energia gasta em repouso absoluto (depende da formula escolhida)
+2. **GEA** — gasto energetico por atividade (TMB x fator de atividade)
+3. **GMT** — gasto metabolico de treino (calculado via MET das sessoes cadastradas)
+4. **GET** — gasto energetico total (GEA + GMT)
+5. **VET** — valor energetico total (GET + ajuste de objetivo)
+
+## Importacao de dados da Antropometria
+
+Ao criar um novo calculo, voce pode importar dados de um registro de antropometria existente. O sistema traz automaticamente:
+
+- Peso e altura
+- Idade e sexo biologico
+- Massa magra e percentual de gordura (quando disponiveis)
+
+<Callout type="info" title="Importacao automatica">
+Ao clicar em "Novo Calculo" a partir da aba de Antropometria, o DietFlow ja importa os dados mais recentes sem que voce precise digitar novamente.
+</Callout>
+
+## Formulas de TMB
+
+O DietFlow oferece 11 equacoes para estimar a Taxa Metabolica Basal, cobrindo diferentes perfis de paciente:
+
+| Formula | Ano | Dados necessarios | Indicacao |
+|---------|-----|-------------------|-----------|
+| Harris-Benedict | 1919 | Peso, altura, idade, sexo | Avaliacao inicial e populacao em geral |
+| Harris-Benedict Revisada | 1984 | Peso, altura, idade, sexo | Versao atualizada, maior precisao |
+| FAO/OMS | 1985 | Peso, idade, sexo | Recomendada pela OMS, considera faixas etarias |
+| Mifflin-St. Jeor | 1990 | Peso, altura, idade, sexo | Boa precisao para IMC normal e sobrepeso |
+| Katch-McArdle | 1996 | Massa magra | Precisa para atletas e composicao corporal atipica |
+| Cunningham | 1980 | Massa magra | Especifica para atletas |
+| Owen | 1986 | Peso, sexo | Pessoas com peso normal |
+| Schofield | 1985 | Peso, altura, idade, sexo | Multiplas faixas etarias, boa para adolescentes |
+| Tinsley Basica | — | Peso, altura, idade, sexo | Estimativa simplificada |
+| Tinsley Avancada | — | Peso, altura, idade, sexo | Estimativa com mais variaveis |
+| Customizado | — | Variavel | Permite informar um valor de TMB manualmente |
+
+<Callout type="info" title="Escolha inteligente">
+O sistema sugere automaticamente a formula mais adequada com base nos dados disponiveis do paciente. Por exemplo, se voce informou a massa magra, o DietFlow prioriza formulas como Katch-McArdle ou Cunningham.
+</Callout>
+
+## Fator de atividade
+
+Apos calcular a TMB, voce seleciona o nivel de atividade fisica do paciente. Cada formula tem seus proprios fatores — o sistema exibe automaticamente os fatores compativeis com a formula escolhida.
+
+Exemplos de niveis (Harris-Benedict):
+
+| Nivel | Fator | Descricao |
+|-------|-------|-----------|
+| Sedentario | 1,2 | Trabalho sentado, sem exercicios |
+| Levemente ativo | 1,375 | Exercicios leves 1-3x por semana |
+| Moderadamente ativo | 1,55 | Exercicios moderados 3-5x por semana |
+| Muito ativo | 1,725 | Exercicios pesados 6-7x por semana |
+| Extremamente ativo | 1,9 | Exercicios pesados diarios e trabalho fisico |
+
+A formula FAO/OMS tem fatores diferenciados por sexo. O sistema lida com isso automaticamente.
+
+## Treinos e MET
+
+Para pacientes que treinam, voce pode cadastrar sessoes de exercicio com detalhamento por MET (Equivalente Metabolico). Cada treino contribui para o GMT (Gasto Metabolico de Treino), que e somado ao calculo do GET.
+
+### Modo simples
+
+Informe a atividade, a duracao e a frequencia semanal. O sistema busca o valor MET no banco com mais de 800 atividades catalogadas.
+
+### Modo detalhado
+
+Alem da atividade e duracao, voce define:
+
+- **Intensidade** (leve, moderada, intensa)
+- **Frequencia** por dia da semana
+- **Horario** do treino
+
+O modo detalhado permite criar cenarios diferenciados entre dias de treino e dias de descanso.
+
+<Callout type="info" title="Banco de atividades">
+O DietFlow inclui mais de 800 atividades fisicas catalogadas com valores MET, organizadas por categoria (caminhada, corrida, musculacao, esportes, atividades domesticas, etc.).
+</Callout>
+
+## Ajuste de objetivo (VET)
+
+O VET e a meta calorica final do paciente. Voce pode defini-lo de duas formas:
+
+### Por objetivo de peso
+
+Informe a meta de peso e o tempo estimado para atingi-la. O sistema calcula automaticamente o ajuste calorico necessario:
+
+- **Emagrecimento** — deficit calorico (VET menor que o GET)
+- **Manutencao** — VET igual ao GET
+- **Ganho de massa** — superavit calorico (VET maior que o GET)
+
+A base do calculo e: 1 kg de gordura corporal equivale a aproximadamente 7.700 kcal.
+
+### Por VET direto
+
+Se preferir, informe diretamente o VET desejado. O sistema calcula automaticamente o ajuste em relacao ao GET.
+
+## Cenarios
+
+O sistema gera cenarios automaticamente com base nos treinos cadastrados. Cada cenario tem metas energeticas e de macros independentes.
+
+### Modos de geracao
+
+| Modo | Como funciona |
+|------|--------------|
+| **Sistematico** | Gera um cenario para cada combinacao unica de treinos por dia |
+| **Otimizado** | Agrupa dias com treinos semelhantes |
+| **Basico** | Considera todos os dias iguais (sem diferenciacao) |
+
+### Exemplo pratico
+
+Um paciente que treina musculacao 3x por semana e faz cardio 2x por semana pode ter:
+
+- **Cenario Treino Musculacao** — dias com maior gasto e mais carboidrato
+- **Cenario Treino Cardio** — dias com gasto intermediario
+- **Cenario Descanso** — dias sem treino, com menor aporte calorico
+
+Cada cenario carrega seus proprios valores de VET, macronutrientes e distribuicao por refeicao.
+
+## VET diario
+
+Alem do VET medio, o sistema calcula o VET especifico para cada dia da semana, considerando quais treinos acontecem em cada dia. Isso permite uma visao granular do gasto energetico ao longo da semana.
+
+## Do Calculo ao Plano Alimentar
+
+Os resultados do calculo — VET, macronutrientes e cenarios — fluem automaticamente para o modulo de [Plano Alimentar](/docs/modulos/dieta). Ao criar uma dieta, voce pode importar as metas do calculo e o sistema ja monta a distribuicao de macros por refeicao.
+
+Para entender como os modulos se conectam, veja a [referencia do Pipeline Clinico](/docs/referencia/pipeline-clinico).
+
+## Glossario
+
+| Sigla | Nome completo | O que e |
+|-------|--------------|---------|
+| **TMB** | Taxa Metabolica Basal | Energia gasta em repouso absoluto |
+| **GEA** | Gasto Energetico por Atividade | TMB multiplicada pelo fator de atividade |
+| **GMT** | Gasto Metabolico de Treino | Gasto adicional pelas sessoes de treino (via MET) |
+| **GET** | Gasto Energetico Total | GEA + GMT |
+| **VET** | Valor Energetico Total | Meta calorica final (GET + ajuste de objetivo) |
+| **MET** | Equivalente Metabolico | Unidade que mede a intensidade de uma atividade fisica |

@@ -3,6 +3,14 @@
   "pages": [
     "cadastrar-paciente",
     "criar-consulta",
-    "calculo-nutricional"
+    "calculo-nutricional",
+    "anamnese",
+    "antropometria",
+    "exames",
+    "prescricao",
+    "plano-alimentar",
+    "tarefas",
+    "meus-conteudos",
+    "exportar"
   ]
 }

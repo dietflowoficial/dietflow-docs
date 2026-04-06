@@ -1,0 +1,59 @@
+{
+  "status": "approved",
+  "qa_result": {
+    "tests": {
+      "unit": "skipped",
+      "typecheck": "pass",
+      "integration": "skipped",
+      "build": "pass"
+    },
+    "code_review": {
+      "security": "pass",
+      "patterns": "pass",
+      "quality": "pass"
+    },
+    "checks_performed": {
+      "page_count": {
+        "result": "pass",
+        "detail": "38 MDX pages found (target was 30+)"
+      },
+      "build": {
+        "result": "pass",
+        "detail": "npm run build succeeded — 121 static pages, 38 doc paths, zero errors"
+      },
+      "meta_json_completeness": {
+        "result": "pass",
+        "detail": "All 6 meta.json files cross-checked against MDX files in each directory — every file listed, no orphans"
+      },
+      "frontmatter": {
+        "result": "pass",
+        "detail": "All 38 MDX pages have title and description in frontmatter"
+      },
+      "no_technical_jargon": {
+        "result": "pass",
+        "detail": "Grep for Server Action, SWR, Provider, hook, component, model, Prisma, Supabase, HeroUI, React, Next.js — zero matches across all 38 pages"
+      },
+      "mdx_components": {
+        "result": "pass",
+        "detail": "Steps/Step and Callout used correctly. Cards/Card used in index.mdx. No Tabs/Tab (unregistered component) found anywhere."
+      },
+      "internal_links": {
+        "result": "pass",
+        "detail": "All /docs/* links extracted and verified — every link resolves to an existing MDX file"
+      },
+      "tone_consistency": {
+        "result": "pass",
+        "detail": "Sampled 8 pages (prescricao guide, prescricao module, forms, tarefas, textos, agenda, index, sobre). Consistent nutricionista-facing tone, uses 'voce', no jargon, clear tables and callouts."
+      }
+    },
+    "issues": [],
+    "suggestions": [
+      {
+        "file": "content/docs/guias/cadastrar-paciente.mdx",
+        "description": "Link to plano Pro points to /docs/referencia/modulos-clinicos instead of /docs/referencia/planos-e-precos — works but is slightly off-target for 'plano Pro' context"
+      }
+    ],
+    "verdict": "APPROVED"
+  },
+  "completed_at": "2026-04-06T21:30:00Z"
+}

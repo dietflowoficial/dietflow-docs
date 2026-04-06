@@ -1,0 +1,75 @@
+---
+title: Planos de Atendimento
+description: Crie tipos de consulta com valor, duracao, cadencia de retorno e regras de cobranca.
+---
+
+Planos de Atendimento sao os **tipos de servico** que voce oferece aos seus pacientes. Cada plano define quanto custa a consulta, se tem retorno, e a cada quantos dias o paciente deve voltar.
+
+Exemplos de planos: "Emagrecimento Clinico", "Nutricao Esportiva", "Acompanhamento Mensal", "Consulta Avulsa".
+
+## Acessando os Planos
+
+Acesse pelo menu **Configuracoes → Planos de Atendimento**. Voce vera a lista de planos ativos com um botao para criar novos.
+
+## Criando um Plano
+
+Ao clicar em **Novo Plano**, voce preenche:
+
+### Valores
+
+- **Nome** — identifique o tipo de atendimento (ex: "Emagrecimento Clinico")
+- **Valor da consulta** — preco cobrado pela consulta (em R$)
+- **Tem retorno?** — se o paciente pode retornar com valor reduzido ou gratuito
+- **Cobra retorno?** — se ativado, define o valor do retorno. Se desativado, o retorno e gratuito
+
+### Cadencia
+
+A cadencia e o **ciclo de acompanhamento** do plano — a cada quantos dias voce espera que o paciente retorne.
+
+- **Paciente volta a cada** — numero de dias do ciclo completo (padrao: 30 dias)
+- **Duracao do atendimento** — tempo reservado na agenda para este tipo de consulta. Se deixar como "Padrao da agenda", usa a duracao definida nas configuracoes gerais
+- **Tolerancia para retorno** — prazo maximo (em dias) para o paciente retornar com valor de retorno. O padrao e metade da cadencia
+
+<Callout type="info" title="Como funciona a cadencia">
+Se voce configurar cadencia de 30 dias e tolerancia de 15 dias: apos uma consulta, o paciente tem ate 15 dias para voltar como retorno. Se voltar depois disso, o sistema aplica a regra "fora da janela" que voce definiu.
+</Callout>
+
+### Fora da janela
+
+Quando o paciente retorna apos o prazo de tolerancia, o sistema oferece 3 opcoes de comportamento:
+
+| Opcao | O que acontece |
+|-------|---------------|
+| **Cobrar consulta** | O paciente paga o valor cheio da consulta |
+| **Manter retorno** | Mantem o valor reduzido do retorno |
+| **Perguntar na hora** | Voce decide no momento do agendamento |
+
+## Exemplo Pratico
+
+Imagine um plano "Emagrecimento" com cadencia de 30 dias:
+
+1. **Dia 0** — Consulta (R$ 350)
+2. **Dia 14** — Paciente volta dentro da tolerancia → Retorno (gratuito ou valor reduzido)
+3. **Dia 28** — Paciente volta novamente → Retorno (o relogio reseta a cada visita)
+
+Se o paciente passar de 15 dias sem voltar, o proximo atendimento segue a regra "fora da janela" do plano.
+
+## Gerenciando Planos
+
+Na lista de planos voce pode:
+
+- **Editar** — alterar nome, valores, cadencia e regras
+- **Ativar/Desativar** — desativar um plano impede que ele seja selecionado em novos agendamentos, mas nao afeta consultas ja marcadas
+- **Excluir** — remove o plano permanentemente
+
+## Usando na Agenda
+
+Quando voce agenda uma consulta, o DietFlow pede para selecionar o plano de atendimento. O plano define automaticamente:
+
+- O valor da consulta
+- A duracao reservada na agenda (se configurada no plano)
+- Se e consulta ou retorno (baseado no historico do paciente e na cadencia)
+
+<Callout type="warn" title="Plano padrao">
+O DietFlow cria automaticamente um plano padrao na primeira vez que voce acessa o sistema. Voce pode editar este plano, mas nao pode excluir ele.
+</Callout>

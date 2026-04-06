@@ -1,0 +1,115 @@
+{
+  "status": "complete",
+  "subtasks_completed": [
+    {
+      "subtask_id": "subtask-5",
+      "status": "complete",
+      "implementation": {
+        "files_modified": [
+          "content/docs/guias/prescricao.mdx",
+          "content/docs/modulos/prescricao.mdx"
+        ],
+        "files_created": [],
+        "verification_result": "pass",
+        "verification_output": "npx next build succeeded — both pages included in static generation (+35 paths), zero errors",
+        "self_critique": {
+          "pattern_adherence": true,
+          "error_handling": true,
+          "code_cleanliness": true,
+          "issues_found": [],
+          "improvements_made": [
+            "Added UL guardrail section with beta callout matching README manual-first reality",
+            "Covered merge vs replace import modes from handleImportLoad code",
+            "Included bulk add feature from ModalAdicionarEmMassa",
+            "Listed all 8 vias de administracao and 9 formas farmaceuticas from constants"
+          ]
+        },
+        "tdd": {
+          "exception": "Documentation content (MDX pages) — no testable logic, verification via build"
+        }
+      },
+      "completed_at": "2026-04-06T00:00:00Z"
+    },
+    {
+      "subtask_id": "subtask-7",
+      "status": "complete",
+      "implementation": {
+        "files_modified": [
+          "content/docs/modulos/forms.mdx"
+        ],
+        "files_created": [],
+        "files_validated": [
+          "content/docs/guias/tarefas.mdx",
+          "content/docs/modulos/tarefas.mdx",
+          "content/docs/modulos/textos.mdx"
+        ],
+        "verification_result": "pass",
+        "verification_output": "npx next build succeeded — all pages in static generation (+35 paths), zero errors",
+        "self_critique": {
+          "pattern_adherence": true,
+          "error_handling": true,
+          "code_cleanliness": true,
+          "issues_found": [],
+          "improvements_made": [
+            "Replaced forms.mdx placeholder with full module reference covering all 5 field types",
+            "Documented 4-tab editor architecture from FormsMain.tsx",
+            "Covered send-to-patient flow with CPF validation",
+            "Included bulk send capability",
+            "Documented all 5 scope options from TabConfiguracoes constants",
+            "Validated tarefas and textos content against source code — accurate"
+          ]
+        },
+        "tdd": {
+          "exception": "Documentation content (MDX pages) — no testable logic, verification via build"
+        }
+      },
+      "completed_at": "2026-04-06T18:00:00Z"
+    },
+    {
+      "subtask_id": "subtask-11",
+      "status": "complete",
+      "implementation": {
+        "files_modified": [
+          "content/docs/index.mdx",
+          "content/docs/comecando/tour-rapido.mdx"
+        ],
+        "files_created": [],
+        "verification_result": "pass",
+        "verification_output": "npm run build succeeded — 121 static pages generated (38 MDX pages, +35 doc paths), zero errors",
+        "self_critique": {
+          "pattern_adherence": true,
+          "error_handling": true,
+          "code_cleanliness": true,
+          "issues_found": [],
+          "improvements_made": [
+            "Expanded index.mdx from 3 sections (Comecando/Guias/Referencia) to 5 sections with all pages linked via Cards",
+            "Added Modulos section (11 cards) and Configuracoes section (5 cards) to index",
+            "Expanded Guias section from 3 cards to 11 cards covering all guides",
+            "Expanded Referencia section from 2 cards to 6 cards",
+            "Expanded tour-rapido with subsections for each clinical module with links to guides and references",
+            "Added Gestacao mention, Prescricao details, Forms mention, Textos mention",
+            "Added cross-links to pipeline-clinico, all guides and module references",
+            "Added 'Proximo passo' section with Cards for next actions",
+            "Verified all 6 meta.json files list every MDX page in their directory — all complete"
+          ]
+        },
+        "meta_json_audit": {
+          "root": "OK — lists index, comecando, guias, modulos, configuracoes, referencia, sobre",
+          "comecando": "OK — 3 pages match 3 MDX files",
+          "guias": "OK — 11 pages match 11 MDX files",
+          "modulos": "OK — 11 pages match 11 MDX files",
+          "configuracoes": "OK — 5 pages match 5 MDX files",
+          "referencia": "OK — 6 pages match 6 MDX files"
+        },
+        "total_mdx_pages": 38,
+        "tdd": {
+          "exception": "Documentation content (MDX pages) — no testable logic, verification via build"
+        }
+      },
+      "completed_at": "2026-04-06T20:00:00Z"
+    }
+  ],
+  "subtasks_remaining": [],
+  "current_phase": "complete",
+  "updated_at": "2026-04-06T20:00:00Z"
+}

@@ -1,0 +1,10 @@
+{
+  "title": "Configuracoes",
+  "pages": [
+    "conta",
+    "profissional",
+    "planos-atendimento",
+    "pagamentos",
+    "agenda"
+  ]
+}
