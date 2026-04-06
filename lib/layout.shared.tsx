@@ -1,6 +1,6 @@
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
 import Image from 'next/image';
-import { appName, gitConfig } from './shared';
+import { appName } from './shared';
 
 export function baseOptions(): BaseLayoutProps {
   return {
@@ -8,27 +8,31 @@ export function baseOptions(): BaseLayoutProps {
       title: (
         <>
           <Image
-            src="/dietflow-icon.svg"
+            src="/dietflow-logo.png"
             alt="DietFlow"
             width={24}
-            height={22}
-            className="shrink-0"
+            height={24}
+            className="shrink-0 rounded"
           />
           <span className="font-semibold">{appName}</span>
         </>
       ),
       url: '/',
     },
-    githubUrl: `https://github.com/${gitConfig.user}/${gitConfig.repo}`,
     links: [
       {
-        text: 'DietFlow App',
-        url: 'https://app.dietflow.com.br',
+        text: 'DietFlow',
+        url: 'https://dietflow.com.br',
         external: true,
       },
       {
         text: 'Suporte',
-        url: 'mailto:contato@dietflow.com.br',
+        url: 'mailto:dietflow.oficial@gmail.com',
+        external: true,
+      },
+      {
+        text: 'Instagram',
+        url: 'https://instagram.com/dietflow.oficial',
         external: true,
       },
     ],

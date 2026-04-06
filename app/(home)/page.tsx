@@ -79,26 +79,26 @@ export default function HomePage() {
         <div className="mx-auto flex max-w-5xl flex-col items-center gap-4 text-sm text-fd-muted-foreground sm:flex-row sm:justify-between">
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
             <a
-              href="https://app.dietflow.com.br"
+              href="https://dietflow.com.br"
               target="_blank"
               rel="noopener noreferrer"
               className="transition-colors hover:text-fd-foreground"
             >
-              DietFlow App
+              DietFlow
             </a>
             <a
-              href="mailto:contato@dietflow.com.br"
+              href="mailto:dietflow.oficial@gmail.com"
               className="transition-colors hover:text-fd-foreground"
             >
               Suporte
             </a>
             <a
-              href="https://instagram.com/dietflow"
+              href="https://instagram.com/dietflow.oficial"
               target="_blank"
               rel="noopener noreferrer"
               className="transition-colors hover:text-fd-foreground"
             >
-              @dietflow
+              @dietflow.oficial
             </a>
           </div>
           <p>&copy; 2026 DietFlow. Todos os direitos reservados.</p>
